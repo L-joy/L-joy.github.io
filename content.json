@@ -1,1 +1,1 @@
-[{"title":"first","date":"2019-03-03T06:12:12.000Z","path":"2019/03/03/first/","tags":[]},{"title":"Hello World","date":"2019-03-02T08:42:44.840Z","path":"2019/03/02/hello-world/","tags":[]}]
+[{"title":"first","date":"2019-03-03T06:12:12.000Z","path":"2019/03/03/first/","tags":[{"name":"tags","slug":"tags","permalink":"http://yoursite.com/tags/tags/"}]},{"title":"Hello World","date":"2019-03-02T08:42:44.840Z","path":"2019/03/02/hello-world/","tags":[]}]
