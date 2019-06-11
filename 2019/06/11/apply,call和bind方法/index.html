@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Joe2的博客</title>
+  <title>apply,call和bind方法 | Joe2的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: apply,call和bind方法  apply和call方法 /**  * apply和call的使用方法  *  * apply的使用语法：  * 函数名字.apply(对象,[参数1,参数2,......]);  * 方法名字.apply(对象,[参数1,参数2,......]);  *  * call的使用语法：  * 函数名字.call(对象,[参数1,参数2,......">
+  <meta name="description" content="apply和call方法  123456789101112131415161718192021222324252627282930313233343536373839       /**        * apply和call的使用方法        *        * apply的使用语法：        * 函数名字.apply(对象,[参数1,参数2,......]);        *">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Joe2的博客">
+<meta property="og:title" content="apply,call和bind方法">
 <meta property="og:url" content="http://yoursite.com/2019/06/11/apply,call和bind方法/index.html">
 <meta property="og:site_name" content="Joe2的博客">
-<meta property="og:description" content="title: apply,call和bind方法  apply和call方法 /**  * apply和call的使用方法  *  * apply的使用语法：  * 函数名字.apply(对象,[参数1,参数2,......]);  * 方法名字.apply(对象,[参数1,参数2,......]);  *  * call的使用语法：  * 函数名字.call(对象,[参数1,参数2,......">
+<meta property="og:description" content="apply和call方法  123456789101112131415161718192021222324252627282930313233343536373839       /**        * apply和call的使用方法        *        * apply的使用语法：        * 函数名字.apply(对象,[参数1,参数2,......]);        *">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-11T14:03:34.000Z">
+<meta property="og:updated_time" content="2019-06-11T14:07:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Joe2的博客">
-<meta name="twitter:description" content="title: apply,call和bind方法  apply和call方法 /**  * apply和call的使用方法  *  * apply的使用语法：  * 函数名字.apply(对象,[参数1,参数2,......]);  * 方法名字.apply(对象,[参数1,参数2,......]);  *  * call的使用语法：  * 函数名字.call(对象,[参数1,参数2,......">
+<meta name="twitter:title" content="apply,call和bind方法">
+<meta name="twitter:description" content="apply和call方法  123456789101112131415161718192021222324252627282930313233343536373839       /**        * apply和call的使用方法        *        * apply的使用语法：        * 函数名字.apply(对象,[参数1,参数2,......]);        *">
   
   
     <link rel="icon" href="/favicon.png">
@@ -167,52 +167,57 @@
             <article id="post-apply,call和bind方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      apply,call和bind方法
+    </h1>
+  
+
+        
+        <a href="/2019/06/11/apply,call和bind方法/" class="archive-article-date">
+  	<time datetime="2019-06-11T14:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: apply,call和bind方法</p>
-<ol>
-<li><p>apply和call方法</p>
-<pre><code>/**
- * apply和call的使用方法
- *
- * apply的使用语法：
- * 函数名字.apply(对象,[参数1,参数2,......]);
- * 方法名字.apply(对象,[参数1,参数2,......]);
- *
- * call的使用语法：
- * 函数名字.call(对象,[参数1,参数2,......]);
- * 方法名字.call(对象,[参数1,参数2,......]);
- *
- * 作用：改变this的指向
- * 不同的地方：参数传递的方式是不一样的
- *
- * 只要想使用别的对象的方法，并且希望这个方法是当前对象食物，那么就可以使用apply或者call的方法改变this指向
- */
- //例子
-function Person(age,sex){
-    this.age=age;
-    this.sex=sex;
-}
-Person.prototype.play= function () {
-    console.log(this.sex);
-    return 12113333333334;
-};
-var per=new Person(12,&quot;男&quot;);
-per.play();
-console.log(&quot;******************************&quot;);
-function Student(name,sex){
-    this.name=name;
-    this.sex=sex;
-}
-var stu=new Student(&quot;小明&quot;,&quot;女&quot;);
-var r1=per.play.apply(stu,[10,20]);
-var r2=per.play.call(stu,10,20);
-console.log(r1);
-console.log(r2);
-</code></pre></li>
-<li>bind 方法</li>
+        <ol>
+<li>apply和call方法</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//bind是用来复制一份</span><br><span class="line">     /**</span><br><span class="line">      * 使用的语法：</span><br><span class="line">      *</span><br><span class="line">      * 函数名字.bind(对象,参数1,参数2,.....);------返回值是复制之后的这个函数</span><br><span class="line">      * 方法名字.bind(对象,参数1,参数2,.....);------返回值是复制之后的这个方法</span><br><span class="line">      */</span><br><span class="line">      function Person(name,age)&#123;</span><br><span class="line">         this.name=name;</span><br><span class="line">         this.age=age;</span><br><span class="line">     &#125;</span><br><span class="line">      Person.prototype.play= function () &#123;</span><br><span class="line">          console.log(this+&quot;+++++++&quot;+this.age);</span><br><span class="line">      &#125;;</span><br><span class="line">      function Student(age)&#123;</span><br><span class="line">          this.age=age;</span><br><span class="line">      &#125;</span><br><span class="line">      var per=new Person(&quot;小明&quot;,30);</span><br><span class="line">      var stu=new Student(40);</span><br><span class="line">      var ff=per.play.bind(stu);</span><br><span class="line">      ff();</span><br><span class="line"></span><br><span class="line">      //apply和call是调用的时候改变this指向</span><br><span class="line">      //bind方法，是复制一份的时候改变this指向</span><br><span class="line">      function f1(x,y)&#123;</span><br><span class="line">          console.log((x+y)+&quot;+++++++++&quot;+this);</span><br><span class="line">      &#125;</span><br><span class="line">      //var f=f1.bind(null,10,20);</span><br><span class="line">      var f=f1.bind(null);</span><br><span class="line">      f(10,20);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">       /**</span><br><span class="line">        * apply和call的使用方法</span><br><span class="line">        *</span><br><span class="line">        * apply的使用语法：</span><br><span class="line">        * 函数名字.apply(对象,[参数1,参数2,......]);</span><br><span class="line">        * 方法名字.apply(对象,[参数1,参数2,......]);</span><br><span class="line">        *</span><br><span class="line">        * call的使用语法：</span><br><span class="line">        * 函数名字.call(对象,[参数1,参数2,......]);</span><br><span class="line">        * 方法名字.call(对象,[参数1,参数2,......]);</span><br><span class="line">        *</span><br><span class="line">        * 作用：改变this的指向</span><br><span class="line">        * 不同的地方：参数传递的方式是不一样的</span><br><span class="line">        *</span><br><span class="line">        * 只要想使用别的对象的方法，并且希望这个方法是当前对象食物，那么就可以使用apply或者call的方法改变this指向</span><br><span class="line">        */</span><br><span class="line">        //例子</span><br><span class="line">       function Person(age,sex)&#123;</span><br><span class="line">           this.age=age;</span><br><span class="line">           this.sex=sex;</span><br><span class="line">       &#125;</span><br><span class="line">       Person.prototype.play= function () &#123;</span><br><span class="line">           console.log(this.sex);</span><br><span class="line">           return 12113333333334;</span><br><span class="line">       &#125;;</span><br><span class="line">       var per=new Person(12,&quot;男&quot;);</span><br><span class="line">       per.play();</span><br><span class="line">       console.log(&quot;******************************&quot;);</span><br><span class="line">       function Student(name,sex)&#123;</span><br><span class="line">           this.name=name;</span><br><span class="line">           this.sex=sex;</span><br><span class="line">       &#125;</span><br><span class="line">       var stu=new Student(&quot;小明&quot;,&quot;女&quot;);</span><br><span class="line">       var r1=per.play.apply(stu,[10,20]);</span><br><span class="line">       var r2=per.play.call(stu,10,20);</span><br><span class="line">       console.log(r1);</span><br><span class="line">       console.log(r2);</span><br><span class="line">2. bind 方法</span><br></pre></td></tr></table></figure>
+<p>  //bind是用来复制一份<br>       /**</p>
+<pre><code> * 使用的语法：
+ *
+ * 函数名字.bind(对象,参数1,参数2,.....);------返回值是复制之后的这个函数
+ * 方法名字.bind(对象,参数1,参数2,.....);------返回值是复制之后的这个方法
+ */
+ function Person(name,age){
+    this.name=name;
+    this.age=age;
+}
+ Person.prototype.play= function () {
+     console.log(this+&quot;+++++++&quot;+this.age);
+ };
+ function Student(age){
+     this.age=age;
+ }
+ var per=new Person(&quot;小明&quot;,30);
+ var stu=new Student(40);
+ var ff=per.play.bind(stu);
+ ff();
+
+ //apply和call是调用的时候改变this指向
+ //bind方法，是复制一份的时候改变this指向
+ function f1(x,y){
+     console.log((x+y)+&quot;+++++++++&quot;+this);
+ }
+ //var f=f1.bind(null,10,20);
+ var f=f1.bind(null);
+ f(10,20);
+</code></pre><p><code>`</code></p>
 
       
 
