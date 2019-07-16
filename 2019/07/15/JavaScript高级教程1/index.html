@@ -12,17 +12,17 @@
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript高级教程">
-<meta property="og:url" content="http://yoursite.com/2019/07/15/JavaScript高级教程/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/JavaScript高级教程1/index.html">
 <meta property="og:site_name" content="Joe2的博客">
 <meta property="og:description" content="第一章  JavaScript简介1.1  JavaScript实现一个完整的 JavaScript 实现应该由下列三个不同的部分组成 :  核心（ECMAScript）:由 ECMA-262 定义，提供核心语言功能；   文档对象模型（DOM）:提供访问和操作网页内容的方法和接口；   浏览器对象模型（BOM）:提供与浏览器交互的方法和接口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/07/15/JavaScript高级教程/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/15/JavaScript高级教程/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/JavaScript高级教程1/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/JavaScript高级教程1/2.png">
 <meta property="og:updated_time" content="2019-07-16T02:17:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript高级教程">
 <meta name="twitter:description" content="第一章  JavaScript简介1.1  JavaScript实现一个完整的 JavaScript 实现应该由下列三个不同的部分组成 :  核心（ECMAScript）:由 ECMA-262 定义，提供核心语言功能；   文档对象模型（DOM）:提供访问和操作网页内容的方法和接口；   浏览器对象模型（BOM）:提供与浏览器交互的方法和接口">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/15/JavaScript高级教程/1.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/15/JavaScript高级教程1/1.png">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -168,7 +168,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript高级教程" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaScript高级教程1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -180,7 +180,7 @@
   
 
         
-        <a href="/2019/07/15/JavaScript高级教程/" class="archive-article-date">
+        <a href="/2019/07/15/JavaScript高级教程1/" class="archive-article-date">
   	<time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
 </a>
         
@@ -209,12 +209,12 @@
 <li>对象</li>
 </ul>
 <p>下表列出了 ECMAScript 受主流 Web 浏览器支持的情况 ：</p>
-<p><img src="/2019/07/15/JavaScript高级教程/1.png" alt=" ECMAScript 受主流 Web 浏览器支持的情况"></p>
+<p><img src="/2019/07/15/JavaScript高级教程1/1.png" alt=" ECMAScript 受主流 Web 浏览器支持的情况"></p>
 <h4 id="1-1-2-文档对象模型（DOM）"><a href="#1-1-2-文档对象模型（DOM）" class="headerlink" title="1.1.2 文档对象模型（DOM）"></a>1.1.2 文档对象模型（DOM）</h4><p>1.文档对象模型（ DOM， Document Object Model）是针对 XML 但经过扩展用于 HTML 的应用程序编程接口（ API， Application Programming Interface）。 DOM 把整个页面映射为一个多层节点结构。 HTML或 XML 页面中的每个组成部分都是某种类型的节点，这些节点又包含着不同类型的数据。 </p>
 <p>下面这个HTML页面：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sample Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在 DOM 中，这个页面可以通过下图的分层节点图表示：</p>
-<p><img src="/2019/07/15/JavaScript高级教程/2.png" alt=" 分层节点图"></p>
+<p><img src="/2019/07/15/JavaScript高级教程1/2.png" alt=" 分层节点图"></p>
 <p>通过 DOM 创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM 提供的 API，开发人员可以轻松自如地删除、添加、替换或修改任何节点 。</p>
 <p>2.DOM级别</p>
 <ul>
@@ -335,7 +335,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/15/JavaScript高级教程/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/15/JavaScript高级教程1/" alt="微信分享二维码">
     </div>
 </div>
 
