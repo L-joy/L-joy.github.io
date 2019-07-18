@@ -17,7 +17,7 @@
 <meta property="og:description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/07/16/JavaScript高级教程3/转义字符.png">
-<meta property="og:updated_time" content="2019-07-18T13:29:34.000Z">
+<meta property="og:updated_time" content="2019-07-18T13:45:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript高级教程">
 <meta name="twitter:description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
@@ -213,6 +213,7 @@
 <p>在函数内部的上方包含这条编译指示，也可以指定函数在严格模式下执行： </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-2-关键字和保留字"><a href="#3-2-关键字和保留字" class="headerlink" title="3.2 关键字和保留字"></a>3.2 关键字和保留字</h3><p>以下就是 ECMAScript的全部关键字（带*号上标的是第 5 版新增的关键字）： </p>
+<p>[break                  do                  instanceof         typeof]</p>
 <p>break                  do                  instanceof         typeof<br>case                    else                new                    var<br>catch                   finally            return                 void<br>continue             for                 switch                 while<br>debugger*         function        this                     with<br>default                if                    throw<br>delete                 in                    try </p>
 <p>以下是 ECMA-262 第 3 版定义的全部保留字：<br>abstract             enum             int                     short<br>boolean             export            interface         static<br>byte                    extends         long                  super<br>char                    final               native               synchronized<br>class                   float               package           throws<br>const                  goto               private             transient<br>debugger          implements  protected         volatile<br>double               import           public </p>
 <h3 id="3-3-数据类型"><a href="#3-3-数据类型" class="headerlink" title="3.3 数据类型"></a>3.3 数据类型</h3><h4 id="3-3-1-typeof操作符"><a href="#3-3-1-typeof操作符" class="headerlink" title="3.3.1 typeof操作符"></a>3.3.1 typeof操作符</h4><p>检测给定变量的数据类型—— typeof ，对一个值使用 typeof 操作符可能返回下列某个字符串： </p>
@@ -347,37 +348,27 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</span><br><span class="line">age++;</span><br></pre></td></tr></table></figure>
 <p>把递增操作符放在变量后面并不会改变语句的结果 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> num3 = num1-- + num2; <span class="comment">// 等于 22</span></span><br><span class="line"><span class="keyword">var</span> num4 = num1 + num2; <span class="comment">// 等于 21</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-4-2-位操作符"><a href="#3-4-2-位操作符" class="headerlink" title="3.4.2 位操作符"></a>3.4.2 位操作符</h4><ol>
-<li><p>按位非（ NOT） </p>
+<h4 id="3-4-2-位操作符"><a href="#3-4-2-位操作符" class="headerlink" title="3.4.2 位操作符"></a>3.4.2 位操作符</h4><p><strong>按位非（ NOT）</strong> </p>
 <p>按位非操作符由一个波浪线（ ~）表示，执行按位非的结果就是返回数值的反码。 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">25</span>; <span class="comment">// 二进制 00000000000000000000000000011001</span></span><br><span class="line"><span class="keyword">var</span> num2 = ~num1; <span class="comment">// 二进制 11111111111111111111111111100110</span></span><br><span class="line">alert(num2); <span class="comment">// -26</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>按位与（ AND） </p>
+<p><strong>按位与（ AND）</strong> </p>
 <p>按位与操作符由一个和号字符（ &amp;）表示，它有两个操作符数.</p>
-</li>
-<li><p>按位或（ OR） </p>
+<p><strong>按位或（ OR）</strong> </p>
 <p>按位或操作符由一个竖线符号（ |）表示，同样也有两个操作数 .</p>
-</li>
-<li><p>按位异或（ XOR） </p>
+<p><strong>按位异或（ XOR）</strong> </p>
 <p>按位异或操作符由一个插入符号（ ^）表示，也有两个操作数。 </p>
 <p>这个操作在两个数值对应位上只有一个 1 时才返回 1，如果对应的两位都是 1 或都是 0，则返回 0。 </p>
-</li>
-<li><p>左移</p>
+<p><strong>左移</strong></p>
 <p>左移操作符由两个小于号（ &lt;&lt;）表示，这个操作符会将数值的所有位向左移动指定的位数。 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">2</span>; <span class="comment">// 等于二进制的 10</span></span><br><span class="line"><span class="keyword">var</span> newValue = oldValue &lt;&lt; <span class="number">5</span>; <span class="comment">// 等于二进制的 1000000，十进制的 64</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>有符号的右移 </p>
+<p><strong>有符号的右移</strong> </p>
 <p>有符号的右移操作符由两个大于号（ &gt;&gt;）表示，这个操作符会将数值向右移动，但保留符号位（即正负号标记）。 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">64</span>; <span class="comment">// 等于二进制的 1000000</span></span><br><span class="line"><span class="keyword">var</span> newValue = oldValue &gt;&gt; <span class="number">5</span>; <span class="comment">// 等于二进制的 10 ，即十进制的 2</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>无符号右移 </p>
+<p><strong>无符号右移</strong> </p>
 <p>无符号右移操作符由 3 个大于号（ &gt;&gt;&gt;）表示，这个操作符会将数值的所有 32 位都向右移动。 对正数来说，无符号右移的结果与有符号右移相同。 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">-64</span>; <span class="comment">// 等于二进制的 11111111111111111111111111000000</span></span><br><span class="line"><span class="keyword">var</span> newValue = oldValue &gt;&gt;&gt; <span class="number">5</span>; <span class="comment">// 等于十进制的 134217726</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 <h4 id="3-4-3-布尔操作符"><a href="#3-4-3-布尔操作符" class="headerlink" title="3.4.3 布尔操作符"></a>3.4.3 布尔操作符</h4><p>布尔操作符一共有 3 个：非（ NOT）、与（ AND）和或（ OR） ；</p>
-<ol>
-<li><p>逻辑非 </p>
+<p><strong>逻辑非</strong> </p>
 <p>逻辑非操作符由一个叹号(!)表示 ,逻辑非操作符遵循下列规则： </p>
 <ul>
 <li>如果操作数是一个对象，返回 false；</li>
@@ -389,8 +380,7 @@
 <li>如果操作数是 NaN，返回 true；</li>
 <li>如果操作数是 undefined，返回 true。 </li>
 </ul>
-</li>
-<li><p>逻辑与</p>
+<p><strong>逻辑与</strong></p>
 <p>逻辑与操作符由两个和号（ &amp;&amp;）表示，有两个操作数 ,它遵循下列规则： </p>
 <ul>
 <li>如果第一个操作数是对象，则返回第二个操作数；</li>
@@ -400,8 +390,7 @@
 <li>如果有一个操作数是 NaN，则返回 NaN；</li>
 <li>如果有一个操作数是 undefined，则返回 undefined。 </li>
 </ul>
-</li>
-<li><p>逻辑或</p>
+<p>逻辑或</p>
 <p>逻辑或操作符由两个竖线符号（ ||）表示，有两个操作数 ,它遵循下列规则：</p>
 <ul>
 <li>如果第一个操作数是对象，则返回第一个操作数；</li>
@@ -411,8 +400,6 @@
 <li>如果两个操作数都是 NaN，则返回 NaN；</li>
 <li>如果两个操作数都是 undefined，则返回 undefined。 </li>
 </ul>
-</li>
-</ol>
 <h3 id="3-5-语句"><a href="#3-5-语句" class="headerlink" title="3.5 语句"></a>3.5 语句</h3><h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">25</span>) &#123;</span><br><span class="line">   alert(<span class="string">"Greater than 25."</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">   alert(<span class="string">"Less than 0."</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">   alert(<span class="string">"Between 0 and 25, inclusive."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="do-while语句"><a href="#do-while语句" class="headerlink" title="do-while语句"></a>do-while语句</h4><p>do-while 语句是一种后测试循环语句，即只有在循环体中的代码执行之后，才会测试出口条件。 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">   statement</span><br><span class="line">&#125; <span class="keyword">while</span> (expression);</span><br></pre></td></tr></table></figure>
