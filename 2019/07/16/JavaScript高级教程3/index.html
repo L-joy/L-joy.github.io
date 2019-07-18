@@ -17,7 +17,7 @@
 <meta property="og:description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/07/16/JavaScript高级教程3/转义字符.png">
-<meta property="og:updated_time" content="2019-07-18T13:45:52.000Z">
+<meta property="og:updated_time" content="2019-07-18T13:48:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript高级教程">
 <meta name="twitter:description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
@@ -212,8 +212,7 @@
 <p>其实它是一个编译指示（ pragma） </p>
 <p>在函数内部的上方包含这条编译指示，也可以指定函数在严格模式下执行： </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-2-关键字和保留字"><a href="#3-2-关键字和保留字" class="headerlink" title="3.2 关键字和保留字"></a>3.2 关键字和保留字</h3><p>以下就是 ECMAScript的全部关键字（带*号上标的是第 5 版新增的关键字）： </p>
-<p>[break                  do                  instanceof         typeof]</p>
+<h3 id="3-2-关键字和保留字"><a href="#3-2-关键字和保留字" class="headerlink" title="3.2 关键字和保留字"></a>3.2 关键字和保留字</h3><p>以下就是 ECMAScript的全部关键字（带<em>号上标的是第 5 版新增的关键字）： </em></p>
 <p>break                  do                  instanceof         typeof<br>case                    else                new                    var<br>catch                   finally            return                 void<br>continue             for                 switch                 while<br>debugger*         function        this                     with<br>default                if                    throw<br>delete                 in                    try </p>
 <p>以下是 ECMA-262 第 3 版定义的全部保留字：<br>abstract             enum             int                     short<br>boolean             export            interface         static<br>byte                    extends         long                  super<br>char                    final               native               synchronized<br>class                   float               package           throws<br>const                  goto               private             transient<br>debugger          implements  protected         volatile<br>double               import           public </p>
 <h3 id="3-3-数据类型"><a href="#3-3-数据类型" class="headerlink" title="3.3 数据类型"></a>3.3 数据类型</h3><h4 id="3-3-1-typeof操作符"><a href="#3-3-1-typeof操作符" class="headerlink" title="3.3.1 typeof操作符"></a>3.3.1 typeof操作符</h4><p>检测给定变量的数据类型—— typeof ，对一个值使用 typeof 操作符可能返回下列某个字符串： </p>
