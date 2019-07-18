@@ -17,7 +17,7 @@
 <meta property="og:description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/07/16/JavaScript高级教程3/转义字符.png">
-<meta property="og:updated_time" content="2019-07-18T13:58:16.000Z">
+<meta property="og:updated_time" content="2019-07-18T14:03:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript高级教程">
 <meta name="twitter:description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
@@ -215,7 +215,7 @@
 <h3 id="3-2-关键字和保留字"><a href="#3-2-关键字和保留字" class="headerlink" title="3.2 关键字和保留字"></a>3.2 关键字和保留字</h3><p>以下就是 ECMAScript的全部关键字（带*号上标的是第 5 版新增的关键字）： </p>
 <p>break                  do                  instanceof         typeof<br>case                    else                new                    var<br>catch                   finally            return                 void<br>continue             for                 switch                 while<br>debugger*         function        this                     with<br>default                if                    throw<br>delete                 in                    try </p>
 <p>以下是 ECMA-262 第 3 版定义的全部保留字：<br>abstract             enum             int                     short<br>boolean             export            interface         static<br>byte                    extends         long                  super<br>char                    final               native               synchronized<br>class                   float               package           throws<br>const                  goto               private             transient<br>debugger          implements  protected         volatile<br>double               import           public </p>
-<h3 id="3-3-数据类型"><a href="#3-3-数据类型" class="headerlink" title="3.3 数据类型"></a>3.3 数据类型</h3><h4 id="3-3-1-“typeof”操作符"><a href="#3-3-1-“typeof”操作符" class="headerlink" title="3.3.1 “typeof”操作符"></a>3.3.1 “typeof”操作符</h4><p>检测给定变量的数据类型—— typeof ，对一个值使用 typeof 操作符可能返回下列某个字符串： </p>
+<h3 id="3-3-数据类型"><a href="#3-3-数据类型" class="headerlink" title="3.3 数据类型"></a>3.3 数据类型</h3><h4 id="3-3-1-typeof操作符"><a href="#3-3-1-typeof操作符" class="headerlink" title="3.3.1  typeof操作符"></a>3.3.1  typeof操作符</h4><p>检测给定变量的数据类型—— typeof ，对一个值使用 typeof 操作符可能返回下列某个字符串： </p>
 <ul>
 <li>“undefined”——如果这个值未定义；</li>
 <li>“boolean”——如果这个值是布尔值；</li>
@@ -224,13 +224,13 @@
 <li>“object”——如果这个值是对象或 null；</li>
 <li>“function”——如果这个值是函数。 </li>
 </ul>
-<h4 id="3-3-2-Undefined类型"><a href="#3-3-2-Undefined类型" class="headerlink" title="3.3.2 Undefined类型"></a>3.3.2 Undefined类型</h4><p>Undefined 类型只有一个值，即特殊的 undefined。在使用 var 声明变量但未对其加以初始化时，这个变量的值就是 undefined ；</p>
+<h4 id="3-3-2-Undefined类型"><a href="#3-3-2-Undefined类型" class="headerlink" title="3.3.2  Undefined类型"></a>3.3.2  Undefined类型</h4><p>Undefined 类型只有一个值，即特殊的 undefined。在使用 var 声明变量但未对其加以初始化时，这个变量的值就是 undefined ；</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message;</span><br><span class="line">alert(message == <span class="literal">undefined</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h4 id="3-3-3-Null类型"><a href="#3-3-3-Null类型" class="headerlink" title="3.3.3 Null类型"></a>3.3.3 Null类型</h4><p>Null 类型是第二个只有一个值的数据类型，这个特殊的值是 null。 null 值表示一个<strong>空对象指针</strong>，而这也正是使用 typeof 操作符检测 null 值时会返回”object”的原因，如下面的例子所示： </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> car = <span class="literal">null</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> car); <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
 <p>实际上， undefined 值是派生自 null 值的，因此 ECMA-262 规定对它们的相等性测试要返回 true： </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="literal">null</span> == <span class="literal">undefined</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-3-4-Boolean类型"><a href="#3-3-4-Boolean类型" class="headerlink" title="3.3.4 Boolean类型"></a>3.3.4 Boolean类型</h4><p>该类型只有两个字面值： true 和 false。 true 不一定等于 1，而 false 也不一定等于 0。 </p>
+<h4 id="3-3-4-Boolean类型"><a href="#3-3-4-Boolean类型" class="headerlink" title="3.3.4  Boolean类型"></a>3.3.4  Boolean类型</h4><p>该类型只有两个字面值： true 和 false。 true 不一定等于 1，而 false 也不一定等于 0。 </p>
 <p>可以对任何数据类型的值调用 Boolean()函数，而且总会返回一个 Boolean 值。 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="string">"Hello world!"</span>;</span><br><span class="line"><span class="keyword">var</span> messageAsBoolean = <span class="built_in">Boolean</span>(message);</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，字符串 message 被转换成了一个 Boolean 值， 该值被保存在 messageAsBoolean<br>变量中。 </p>
