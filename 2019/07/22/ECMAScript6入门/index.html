@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMAScript6入门 | Joe2的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章 let和const命令1.1 let命令ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b // 1 for循环还有一个特别之处，就是设置循环变量的那部分是一个">
+  <meta name="description" content="第一章 let和const命令1.1 let命令ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript6入门">
 <meta property="og:url" content="http://yoursite.com/2019/07/22/ECMAScript6入门/index.html">
 <meta property="og:site_name" content="Joe2的博客">
-<meta property="og:description" content="第一章 let和const命令1.1 let命令ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b // 1 for循环还有一个特别之处，就是设置循环变量的那部分是一个">
+<meta property="og:description" content="第一章 let和const命令1.1 let命令ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-22T11:56:28.000Z">
+<meta property="og:updated_time" content="2019-07-22T12:01:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6入门">
-<meta name="twitter:description" content="第一章 let和const命令1.1 let命令ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b // 1 for循环还有一个特别之处，就是设置循环变量的那部分是一个">
+<meta name="twitter:description" content="第一章 let和const命令1.1 let命令ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -186,6 +186,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="第一章-let和const命令"><a href="#第一章-let和const命令" class="headerlink" title="第一章 let和const命令"></a>第一章 <code>let</code>和<code>const</code>命令</h2><h3 id="1-1-let命令"><a href="#1-1-let命令" class="headerlink" title="1.1 let命令"></a>1.1 <code>let</code>命令</h3><p>ES6 新增了<code>let</code>命令，用来声明变量。它的用法类似于<code>var</code>，但是所声明的变量，只在<code>let</code>命令所在的代码块内有效。</p>
+<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a <span class="comment">// ReferenceError: a is not defined.</span></span><br><span class="line">b <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 <p><code>for</code>循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="string">'abc'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
