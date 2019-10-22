@@ -6,22 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JavaScript高级教程 | Joe2的博客</title>
+  <title>JavaScript高级教程8 | Joe2的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
+  <meta name="description" content="第八章  BOM window对象 location对象 navigator对象 screen对象 history对象">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript高级教程">
-<meta property="og:url" content="http://yoursite.com/2019/07/16/JavaScript高级教程3/index.html">
+<meta property="og:title" content="JavaScript高级教程8">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/index.html">
 <meta property="og:site_name" content="Joe2的博客">
-<meta property="og:description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
+<meta property="og:description" content="第八章  BOM window对象 location对象 navigator对象 screen对象 history对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/07/16/JavaScript高级教程3/转义字符.png">
-<meta property="og:updated_time" content="2019-07-22T12:13:46.000Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/alert.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/confirm.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/prompt.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/location对象.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/navigator对象.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/plugin.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/screen对象.png">
+<meta property="og:updated_time" content="2019-10-22T06:26:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript高级教程">
-<meta name="twitter:description" content="第三章 基本概念本章内容  语法  数据类型  流控制语句  函数">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/16/JavaScript高级教程3/转义字符.png">
+<meta name="twitter:title" content="JavaScript高级教程8">
+<meta name="twitter:description" content="第八章  BOM window对象 location对象 navigator对象 screen对象 history对象">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/alert.png">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -167,262 +173,154 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript高级教程3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaScript高级教程8" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript高级教程
+      JavaScript高级教程8
     </h1>
   
 
         
-        <a href="/2019/07/16/JavaScript高级教程3/" class="archive-article-date">
-  	<time datetime="2019-07-16T03:22:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+        <a href="/2019/10/21/JavaScript高级教程8/" class="archive-article-date">
+  	<time datetime="2019-10-21T07:11:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第三章-基本概念"><a href="#第三章-基本概念" class="headerlink" title="第三章 基本概念"></a>第三章 基本概念</h2><p>本章内容</p>
-<ul>
-<li><p>语法</p>
-</li>
-<li><p>数据类型</p>
-</li>
-<li><p>流控制语句</p>
-</li>
-<li><p>函数 </p>
+        <h2 id="第八章-BOM"><a href="#第八章-BOM" class="headerlink" title="第八章  BOM"></a>第八章  BOM</h2><ul>
+<li>window对象</li>
+<li>location对象</li>
+<li>navigator对象</li>
+<li>screen对象</li>
+<li>history对象</li>
+</ul>
 <a id="more"></a>
+<h3 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h3><p>window 对象有双重角色，它既是通过 JavaScript 访问浏览器窗口的一个接口，又是 ECMAScript 规定的 </p>
+<p>Global 对象。</p>
+<p>定义全局变量与在 window 对象上直接定义属性的区别：全局变量不能通过 delete 操作符删除，而直接在 </p>
+<p>window 对象上的定义的属性可以。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>; </span><br><span class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>; </span><br><span class="line"><span class="comment">//在 IE &lt; 9 时抛出错误，在其他所有浏览器中都返回 false </span></span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">window</span>.age; </span><br><span class="line"><span class="comment">//在 IE &lt; 9 时抛出错误，在其他所有浏览器中都返回 true </span></span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">window</span>.color; <span class="comment">//returns true </span></span><br><span class="line">alert(<span class="built_in">window</span>.age); <span class="comment">//29 </span></span><br><span class="line">alert(<span class="built_in">window</span>.color); <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<p><code>var</code> 语句添加的 window 属性有一个名为[[Configurable]]的特性，这个特性的值被设置为false，因此这样定</p>
+<p>义的属性不可以通过delete操作符删除.</p>
+<h4 id="间歇调用和超时调用"><a href="#间歇调用和超时调用" class="headerlink" title="间歇调用和超时调用"></a>间歇调用和超时调用</h4><p>超时调用是在指定的时间过后执行代码，间歇调用是每隔指定的时间就执行一次代码。</p>
+<p>超时调用需要使用 window 对象的 <code>setTimeout()</code>方法，它接受两个参数：要执行的代码和以毫秒 </p>
+<p>表示的时间（即在执行代码前需要等待多少毫秒）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"> alert(<span class="string">"Hello world!"</span>); </span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>第二个参数是一个表示等待多长时间的毫秒数，但经过该时间后指定的代码不一定会执行。 JavaScript 是一</p>
+<p>个单线程序的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就 有一个 JavaScript 任</p>
+<p>务队列。这些任务会按照将它们添加到队列的顺序执行。<code>setTimeout()</code>的第二个 参数告诉 JavaScript 再过</p>
+<p>多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即 执行；如果队列不是空的，那</p>
+<p>么它就要等前面的代码执行完了以后再执行。 </p>
+<p>调用<code>setTimeout()</code>之后，该方法会返回一个数值 ID，表示超时调用。这个超时调用 ID 是计划执 行代码的唯</p>
+<p>一标识符，可以通过它来取消超时调用。要取消尚未执行的超时调用计划，可以调用 <code>clearTimeout()</code>方法</p>
+<p>并将相应的超时调用 ID 作为参数传递给它.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置超时调用</span></span><br><span class="line"><span class="keyword">var</span> timeoutId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"> alert(<span class="string">"Hello world!"</span>); </span><br><span class="line">&#125;, <span class="number">1000</span>); </span><br><span class="line"><span class="comment">//注意：把它取消</span></span><br><span class="line">clearTimeout(timeoutId);</span><br></pre></td></tr></table></figure>
+<p>间歇调用与超时调用类似，只不过它会按照指定的时间间隔重复执行代码，直至间歇调用被取消或者页面被</p>
+<p>卸载。设置间歇调用的方法是 <code>setInterval()</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//推荐的调用方式</span></span><br><span class="line">setInterval (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"> alert(<span class="string">"Hello world!"</span>); </span><br><span class="line">&#125;, <span class="number">10000</span>);</span><br></pre></td></tr></table></figure>
+<p>调用<code>setInterval()</code>方法同样也会返回一个间歇调用 ID，该 ID 可用于在将来某个时刻取消间歇调用。要</p>
+<p>取消尚未执行的间歇调用，可以使用<code>clearInterval()</code>方法并传入相应的间歇调用 ID。取消间歇调用的</p>
+<p>重要性要远远高于取消超时调用.</p>
+<h4 id="系统对话框"><a href="#系统对话框" class="headerlink" title="系统对话框"></a>系统对话框</h4><ul>
+<li><p><code>alert()</code>方法</p>
+<p><img src="/2019/10/21/JavaScript高级教程8/alert.png" alt></p>
+</li>
+<li><p><code>confirm()</code>方法</p>
+<p><img src="/2019/10/21/JavaScript高级教程8/confirm.png" alt></p>
+<p>为了确定用户是单击了 OK 还是 Cancel，可以检查 confirm()方法返回的布尔值：true 表示单击 了 OK，</p>
+<p>false 表示单击了 Cancel 或单击了右上角的 X 按钮。确认对话框的典型用法如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(confirm(<span class="string">"Are you sure?"</span>))&#123;</span><br><span class="line">    alert(<span class="string">"sure"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"not sure"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>prompt()</code>方法</p>
+<p><img src="/2019/10/21/JavaScript高级教程8/prompt.png" alt></p>
 </li>
 </ul>
-<h3 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h3><h4 id="3-1-1-区分大小写"><a href="#3-1-1-区分大小写" class="headerlink" title="3.1.1 区分大小写"></a>3.1.1 区分大小写</h4><p>ECMAScript 中的一切（变量、函数名和操作符）都区分大小写 </p>
-<h4 id="3-1-2-标识符"><a href="#3-1-2-标识符" class="headerlink" title="3.1.2 标识符"></a>3.1.2 标识符</h4><p>所谓标识符，就是指变量、函数、属性的名字，或者函数的参数。标识符可以是按照下列格式规则<br>组合起来的一或多个字符： </p>
+<p>prompt()方法接受两个参数：要显示给用户的文本提示和文本输入域的默认值（可以是一个空字符串）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prompt(<span class="string">"What's you name"</span>,<span class="string">"jackson"</span>);</span><br></pre></td></tr></table></figure>
+<p>如果用户单击了 OK 按钮，则 prompt()返回文本输入域的值；如果用户单击了 Cancel 或没有单击OK 而是通</p>
+<p>过其他方式关闭了对话框，则该方法返回 null。下面是一个例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = prompt(<span class="string">"What's you name"</span>,<span class="string">"jackson"</span>);</span><br><span class="line"><span class="keyword">if</span>(result !== <span class="literal">null</span>)&#123;</span><br><span class="line">    alert(result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过这几个方法打开的对话框都是同步和模态的。也就是说，显示这些对话框的时候代码会停止执行，而关</p>
+<p>掉这些对话框后代码又会恢复执行。 </p>
+<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p>location 对象是很特别的一个对象，因为它既是 window 对象的属性，也是document 对象的属性；换句话</p>
+<p>说，<code>window.location</code> 和 <code>document.location</code> 引用的是同一个对象。</p>
+<p>下表列出了 location 对象的所有属性:</p>
+<p><img src="/2019/10/21/JavaScript高级教程8/location对象.png" alt></p>
+<h4 id="获取URL字符串参数"><a href="#获取URL字符串参数" class="headerlink" title="获取URL字符串参数"></a>获取URL字符串参数</h4><p><code>location.search</code>返回从问号到 URL 末尾的所有内容，但却没有办法逐个 访问其中的每个查询字符串参</p>
+<p>数。为此，可以像下面这样创建一个函数，用以解析查询字符串，然后返回包含所有参数的一个对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getQueryStringArgs</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">     <span class="comment">//取得查询字符串并去掉开头的问号</span></span><br><span class="line">     <span class="keyword">var</span> qs = (location.search.length &gt; <span class="number">0</span> ? location.search.substring(<span class="number">1</span>) : <span class="string">""</span>), </span><br><span class="line">     <span class="comment">//保存数据的对象</span></span><br><span class="line">     args = &#123;&#125;, </span><br><span class="line">     <span class="comment">//取得每一项</span></span><br><span class="line">     items = qs.length ? qs.split(<span class="string">"&amp;"</span>) : [], </span><br><span class="line">     item = <span class="literal">null</span>, </span><br><span class="line">     name = <span class="literal">null</span>,</span><br><span class="line">     value = <span class="literal">null</span>, </span><br><span class="line">     <span class="comment">//在 for 循环中使用</span></span><br><span class="line">     i = <span class="number">0</span>, </span><br><span class="line">     len = items.length; </span><br><span class="line">     <span class="comment">//逐个将每一项添加到 args 对象中</span></span><br><span class="line">     <span class="keyword">for</span> (i=<span class="number">0</span>; i &lt; len; i++)&#123; </span><br><span class="line">         item = items[i].split(<span class="string">"="</span>); </span><br><span class="line">         name = <span class="built_in">decodeURIComponent</span>(item[<span class="number">0</span>]); </span><br><span class="line">         value = <span class="built_in">decodeURIComponent</span>(item[<span class="number">1</span>]); </span><br><span class="line">         <span class="keyword">if</span> (name.length) &#123; </span><br><span class="line">             args[name] = value; </span><br><span class="line">         &#125; </span><br><span class="line">     &#125; </span><br><span class="line">     <span class="keyword">return</span> args; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假设查询字符串是?q=javascript&amp;num=10 </span></span><br><span class="line"><span class="keyword">var</span> args = getQueryStringArgs(); </span><br><span class="line">alert(args[<span class="string">"q"</span>]); <span class="comment">//"javascript" </span></span><br><span class="line">alert(args[<span class="string">"num"</span>]); <span class="comment">//"10"</span></span><br></pre></td></tr></table></figure>
+<h4 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h4><p>改变浏览器的位置：</p>
 <ul>
-<li>第一个字符必须是一个字母、下划线（ _）或一个美元符号（ $）； </li>
-<li>其他字符可以是字母、下划线、美元符号或数字。 </li>
-</ul>
-<p>ECMAScript 标识符采用驼峰大小写格式 ，例如：firstSecond ；</p>
-<p>不能把关键字、保留字、 true、 false 和 null 用作标识符。 </p>
-<h4 id="3-1-3-严格模式"><a href="#3-1-3-严格模式" class="headerlink" title="3.1.3 严格模式"></a>3.1.3 严格模式</h4><p>ECMAScript 5 引入了严格模式（ strict mode）的概念。 要在整个脚本中启用严格模式，可以在顶部添加如下代码： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br></pre></td></tr></table></figure>
-<p>其实它是一个编译指示（ pragma） </p>
-<p>在函数内部的上方包含这条编译指示，也可以指定函数在严格模式下执行： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-2-关键字和保留字"><a href="#3-2-关键字和保留字" class="headerlink" title="3.2 关键字和保留字"></a>3.2 关键字和保留字</h3><p>以下就是 ECMAScript的全部关键字（带*号上标的是第 5 版新增的关键字）： </p>
-<p><code>break</code>                  <code>do</code>                  <code>instanceof</code>         <code>typeof</code><br><code>case</code>                    <code>else</code>                <code>new</code>                    <code>var</code><br><code>catch</code>                  <code>finally</code>            <code>return</code>                 <code>void</code><br><code>continue</code>             <code>for</code>                 <code>switch</code>               <code>while</code><br><code>debugger*</code>         <code>function</code>       <code>this</code>                    <code>with</code><br><code>default</code>               <code>if</code>                   <code>throw</code><br><code>delete</code>                 <code>in</code>                    <code>try</code> </p>
-<p>以下是 ECMA-262 第 3 版定义的全部保留字：<br><code>abstract</code>             <code>enum</code>             <code>int</code>                    <code>short</code><br><code>boolean</code>            <code>export</code>           <code>interface</code>         <code>static</code><br><code>byte</code>                    <code>extends</code>         <code>long</code>                 <code>super</code><br><code>char</code>                    <code>final</code>               <code>native</code>               <code>synchronized</code><br><code>class</code>                  <code>float</code>               <code>package</code>          <code>throws</code><br><code>const</code>                  <code>goto</code>               <code>private</code>             <code>transient</code><br><code>debugger</code>          <code>implements</code>  <code>protected</code>         <code>volatile</code><br><code>double</code>               <code>import</code>           <code>public</code></p>
-<h3 id="3-3-数据类型"><a href="#3-3-数据类型" class="headerlink" title="3.3 数据类型"></a>3.3 数据类型</h3><h4 id="3-3-1-typeof操作符"><a href="#3-3-1-typeof操作符" class="headerlink" title="3.3.1  typeof操作符"></a>3.3.1  <code>typeof</code>操作符</h4><p>检测给定变量的数据类型—— <code>typeof</code> ，对一个值使用<code>typeof</code> 操作符可能返回下列某个字符串： </p>
-<ul>
-<li>“<code>undefined</code>“——如果这个值未定义；</li>
-<li>“<code>boolean</code>“——如果这个值是布尔值；</li>
-<li>“<code>string</code>“——如果这个值是字符串； </li>
-<li>“<code>number</code>“——如果这个值是数值；</li>
-<li>“<code>object</code>“——如果这个值是对象或 null；</li>
-<li>“<code>function</code>“——如果这个值是函数。 </li>
-</ul>
-<h4 id="3-3-2-Undefined类型"><a href="#3-3-2-Undefined类型" class="headerlink" title="3.3.2  Undefined类型"></a>3.3.2  <code>Undefined</code>类型</h4><p>Undefined 类型只有一个值，即特殊的 undefined。在使用 <code>var</code> 声明变量但未对其加以初始化时，这个变量的值就是 undefined ；</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message;</span><br><span class="line">alert(message == <span class="literal">undefined</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-3-3-Null类型"><a href="#3-3-3-Null类型" class="headerlink" title="3.3.3 Null类型"></a>3.3.3 <code>Null</code>类型</h4><p>Null 类型是第二个只有一个值的数据类型，这个特殊的值是 null。 null 值表示一个<strong>空对象指针</strong>，而这也正是使用<code>typeof</code> 操作符检测 null 值时会返回”object”的原因，如下面的例子所示： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> car = <span class="literal">null</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> car); <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
-<p>实际上， undefined 值是派生自 null 值的，因此 ECMA-262 规定对它们的相等性测试要返回 true： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="literal">null</span> == <span class="literal">undefined</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-3-4-Boolean类型"><a href="#3-3-4-Boolean类型" class="headerlink" title="3.3.4  Boolean类型"></a>3.3.4  <code>Boolean</code>类型</h4><p>该类型只有两个字面值： true 和 false。 true 不一定等于 1，而 false 也不一定等于 0。 </p>
-<p>可以对任何数据类型的值调用 Boolean()函数，而且总会返回一个 Boolean 值。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="string">"Hello world!"</span>;</span><br><span class="line"><span class="keyword">var</span> messageAsBoolean = <span class="built_in">Boolean</span>(message);</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，字符串 message 被转换成了一个 <code>Boolean</code>值， 该值被保存在 <code>messageAsBoolean</code><br>变量中。 </p>
-<p>下表给出了各种数据类型及其对应的转换规则。 </p>
-<table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>转换为true值</th>
-<th>转换为false值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Boolean</td>
-<td>true</td>
-<td>false</td>
-</tr>
-<tr>
-<td>String</td>
-<td>任何非空字符串</td>
-<td>“”(空字符串)</td>
-</tr>
-<tr>
-<td>Number</td>
-<td>任何非0数字</td>
-<td>0和<code>NaN</code></td>
-</tr>
-<tr>
-<td>Object</td>
-<td>任何对象</td>
-<td>null</td>
-</tr>
-<tr>
-<td>Undefined</td>
-<td></td>
-<td>undefined</td>
-</tr>
-</tbody>
-</table>
-<h4 id="3-3-5-Number类型"><a href="#3-3-5-Number类型" class="headerlink" title="3.3.5 Number类型"></a>3.3.5 <code>Number</code>类型</h4><p>最基本的数值字面量格式是十进制整数 ，除了以十进制表示外，整数还可以通过八进制（以 8 为基数）或十六进制（以 16 为基数）的字面值来表示。</p>
-<p> 八进制字面值的第一位必须是零（ 0），然后是八进制数字序列(0-7)。如果字面值中的数值超出了范围，那么前导零将被忽略，后面的数值将被当作十进制数值解析。 八进制字面量在严格模式下是无效的 ;</p>
-<p>十六进制字面值的前两位必须是 0x，后跟任何十六进制数字（ 0-9 及 A-F）。其中，字母 A-F可以大写，也可以小写。</p>
-<h5 id="浮点数值"><a href="#浮点数值" class="headerlink" title="浮点数值"></a>浮点数值</h5><p> 对于那些极大或极小的数值，可以用 e 表示法（即科学计数法）表示的浮点数值表示。 用 e 表示法表示的数值等于 e 前面的数值乘以 10 的指数次幂。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatNum = <span class="number">3.125e7</span>; <span class="comment">// 等于 31250000</span></span><br></pre></td></tr></table></figure>
-<h5 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h5><p>ECMAScript 中</p>
-<p>能够表示的最小数值保存在 <code>Number.MIN_VALUE</code> 中——在大多数浏览器中，这个值是 5e-324；</p>
-<p>能够表示的最大数值保存在<code>Number.MAX_VALUE</code> 中——在大多数浏览器中，这个1.7976931348623157e+308。 </p>
-<p>如果某次计算的结果得到了一个超出 JavaScript 数值范围的值， 如果这个数值是负数，则会被转换成-Infinity（负无穷），如果这个数值是正数，则会被转换成 Infinity（正无穷）。 </p>
-<p>要想确定一个数值是不是有穷的可以使用<code>isFinite()</code>函数 ；</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="built_in">Number</span>.MAX_VALUE + <span class="built_in">Number</span>.MAX_VALUE;</span><br><span class="line">alert(<span class="built_in">isFinite</span>(result)); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<h5 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a><code>NaN</code></h5><p><code>NaN</code>，即非数值（ Not a Number）是一个特殊的数值 ，这个数值用于表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出错误了）。 </p>
-<p>例如，在其他编程语言中，任何数值除以 0 都会导致错误，从而停止代码执行。但在 ECMAScript 中，任何数值除以 0 会返回 <code>NaN</code>，因此不会影响其他代码的执行。 </p>
-<p><code>NaN</code> 本身有两个非同寻常的特点：</p>
-<p>首先，任何涉及 <code>NaN</code> 的操作（例如 <code>NaN</code>/10）都会返回 <code>NaN</code>，这个特点在多步计算中有可能导致问题。</p>
-<p>其次， <code>NaN</code> 与任何值都不相等，包括<code>NaN</code> 本身。</p>
-<p>ECMAScript 定义了 <code>isNaN()</code>函数 ，这个函数接受一个参数，该参数可以是任何类型，而函数会帮我们确定这个参数是否“不是数值” ；<code>isNaN()</code>在接收到一个值之后，会尝试将这个值转换为数值。某些不是数值的值会直接转换为数值，例如字符串”10”或 Boolean 值。而任何不能被转换为数值的值都会导致这个函数返回 true。</p>
-<p>请看下面的例子： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">isNaN</span>(<span class="literal">NaN</span>)); <span class="comment">//true</span></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="number">10</span>)); <span class="comment">//false（ 10 是一个数值）</span></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="string">"10"</span>)); <span class="comment">//false（可以被转换成数值 10）</span></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="string">"blue"</span>)); <span class="comment">//true（不能转换成数值）</span></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="literal">true</span>)); <span class="comment">//false（可以被转换成数值 1）</span></span><br></pre></td></tr></table></figure>
-<h5 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h5><p>有 3 个函数可以把非数值转换为数值：<code>Number()</code>、 <code>parseInt()</code>和 <code>parseFloat()</code></p>
-<p>转型函数 Number()可以用于任何数据类型 ；另两个函数则专门用于把字符串转换成数值 </p>
-<p>Number()函数的转换规则如下 ：</p>
-<ul>
-<li>如果是 Boolean 值， true 和 false 将分别被转换为 1 和 0 </li>
-<li>如果是数字值，只是简单的传入和返回 </li>
-<li>如果是 null 值，返回 0</li>
-<li>如果是 undefined，返回 <code>NaN</code> </li>
-<li>如果是字符串，遵循下列规则： <ul>
-<li>如果字符串中只包含数字（包括前面带正号或负号的情况），则将其转换为十进制数值，即”1”会变成 1， “123”会变成 123，而”011”会变成 11（注意：前导的零被忽略了）； </li>
-<li>如果字符串中包含有效的浮点格式，如”1.1”，则将其转换为对应的浮点数值（同样，也会忽略前导零）； </li>
-<li>如果字符串中包含有效的十六进制格式，例如”0xf”，则将其转换为相同大小的十进制整数值； </li>
-<li>如果字符串是空的（不包含任何字符），则将其转换为 0； </li>
-<li>如果字符串中包含除上述格式之外的字符，则将其转换为 <code>NaN</code>。 </li>
-</ul>
+<li><p><code>assign()</code>方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.assign(<span class="string">"http://www.wrox.com"</span>);</span><br></pre></td></tr></table></figure>
 </li>
-<li>如果是对象，则调用对象的 <code>valueOf()</code>方法，然后依照前面的规则转换返回的值。如果转换的结果是 <code>NaN</code>，则调用对象的 <code>toString()</code>方法，然后再次依照前面的规则转换返回的字符串值。 </li>
+<li><p>修改<code>herf</code>属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.href = <span class="string">"http://www.wrox.com"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改<code>location</code>属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.location = <span class="string">"http://www.wrox.com"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改location对象的其他属性也可以改变当前加载的页面。下面的例子展示了通过将hash、search、</p>
+<p>hostname、pathname 和 port 属性设置为新值来改变 URL。</p>
+<p>假设初始 URL 为<code>http://www.wrox.com/WileyCDA/</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将 URL 修改为"http://www.wrox.com/WileyCDA/#section1" </span></span><br><span class="line">location.hash = <span class="string">"#section1"</span>; </span><br><span class="line"><span class="comment">//将 URL 修改为"http://www.wrox.com/WileyCDA/?q=javascript" </span></span><br><span class="line">location.search = <span class="string">"?q=javascript"</span>; </span><br><span class="line"><span class="comment">//将 URL 修改为"http://www.yahoo.com/WileyCDA/" </span></span><br><span class="line">location.hostname = <span class="string">"www.yahoo.com"</span>; </span><br><span class="line"><span class="comment">//将 URL 修改为"http://www.yahoo.com/mydir/" </span></span><br><span class="line">location.pathname = <span class="string">"mydir"</span>; </span><br><span class="line"><span class="comment">//将 URL 修改为"http://www.yahoo.com:8080/WileyCDA/" </span></span><br><span class="line">location.port = <span class="number">8080</span>;</span><br></pre></td></tr></table></figure>
+<p>每次修改 location 的属性（hash 除外），页面都会以新 URL 重新加载。</p>
+</li>
+<li></li>
 </ul>
-<p><code>parseInt()</code>函数在转换字符串时，更多的是看其是否符合数值模式。它会忽略字符串前面的空格，直至找到第一个非空格字符。如果第一个字符不是数字字符或者负号，<code>parseInt()</code>就会返回 <code>NaN</code>；也就是说，用 <code>parseInt()</code>转换空字符串会返回<code>NaN（</code>Number()<code>对空字符返回 0）。如果第一个字符是数字字符，</code> <code>parseInt()</code>会继续解析第二个字符，直到解析完所有后续字符或者遇到了一个非数字字符。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="built_in">parseInt</span>(<span class="string">"1234blue"</span>); <span class="comment">// 1234</span></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="built_in">parseInt</span>(<span class="string">""</span>); <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">var</span> num3 = <span class="built_in">parseInt</span>(<span class="string">"0xA"</span>); <span class="comment">// 10（十六进制数）</span></span><br><span class="line"><span class="keyword">var</span> num4 = <span class="built_in">parseInt</span>(<span class="number">22.5</span>); <span class="comment">// 22</span></span><br><span class="line"><span class="keyword">var</span> num5 = <span class="built_in">parseInt</span>(<span class="string">"070"</span>); <span class="comment">// 56（八进制数）</span></span><br><span class="line"><span class="keyword">var</span> num6 = <span class="built_in">parseInt</span>(<span class="string">"70"</span>); <span class="comment">// 70（十进制数）</span></span><br><span class="line"><span class="keyword">var</span> num7 = <span class="built_in">parseInt</span>(<span class="string">"0xf"</span>); <span class="comment">// 15（十六进制数）</span></span><br></pre></td></tr></table></figure>
-<p><code>parseFloat()</code>也是从第一个字符（位置 0）开始解析每个字符。而且也是一直解析到字符串末尾，或者解析到遇见一个无效的浮点数字字符为止。也就是说，字符串中的第一个小数点是有效的，而第二个小数点就是无效的了，因此它后面的字符串将被忽略。举例来说，”22.34.5”将会被转换为 22.34。 </p>
-<p><code>parseFloat()</code>将 十六进制格式的字符串转换成 0 ；</p>
-<p>最后还要注意一点：如果字符串包含的是一个可解析为整数的数(没有小数点，或者小数点后都是零)<code>parseFloat()</code>会返回整数。 </p>
-<h4 id="3-3-6-String类型"><a href="#3-3-6-String类型" class="headerlink" title="3.3.6 String类型"></a>3.3.6 <code>String</code>类型</h4><p>String 类型用于表示由零或多个 16 位 Unicode 字符组成的字符序列，即字符串。 </p>
-<h5 id="字符字面量"><a href="#字符字面量" class="headerlink" title="字符字面量"></a>字符字面量</h5><p>String 数据类型包含一些特殊的字符字面量，也叫<strong>转义序列</strong>，用于表示非打印字符，或者具有其他用途的字符。这些字符字面量如下表所示： </p>
-<p><img src="/2019/07/16/JavaScript高级教程3/转义字符.png" alt="转义字符"></p>
-<h5 id="字符串的特点"><a href="#字符串的特点" class="headerlink" title="字符串的特点"></a>字符串的特点</h5><p>ECMAScript 中的字符串是不可变的 </p>
-<h5 id="转换为字符串"><a href="#转换为字符串" class="headerlink" title="转换为字符串"></a>转换为字符串</h5><p>要把一个值转换为一个字符串有两种方式。第一种是使用几乎每个值都有的 <code>toString()</code>方法 ，这个方法唯一要做的就是返回相应值的字符串表现。 null 和 undefined 值没有这个方法 。</p>
-<p>调用<code>toString()</code>方法不必传递参数。</p>
-<p>但是，在调用数值的<code>toString()</code>方法时，可以传递一个参数：输出数值的基数(进制数)。 </p>
-<p>在不知道要转换的值是不是 null 或 undefined 的情况下，还可以使用转型函数 <code>String()</code>，这个函数能够将任何类型的值转换为字符串。<code>String()</code>函数遵循下列转换规则：</p>
+<p>当通过上述任何一种方式修改 URL 之后，浏览器的历史记录中就会生成一条新记录，因此用户通过单击“后</p>
+<p>退”按钮都会导航到前一个页面。要禁用这种行为，可以使用 replace()方法。这个方法只接受一个参数，即要</p>
+<p>导航到的 URL；结果虽然会导致浏览器位置改变，但不会在历史记录中生成新记录。在调用<code>replace()</code>方法</p>
+<p>之后，用户不能回到前一个页面，</p>
 <ul>
-<li>如果值有<code>toString()</code>方法，则调用该方法（没有参数）并返回相应的结果；</li>
-<li>如果值是 null，则返回”null”；</li>
-<li>如果值是 undefined，则返回”undefined”。 </li>
+<li><p><code>reload()</code>方法</p>
+<p>作用是重新加载当前显示的页面。如果调用 reload() 时不传递任何参数，页面就会以最有效的方式重新</p>
+<p>加载。也就是说，如果页面自上次请求以来并没有改变过，页面就会从浏览器缓存中重新加载。如果要强</p>
+<p>制从服务器重新加载，则需要像下面这样为该方法传递参数 true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">location.reload(); <span class="comment">//重新加载（有可能从缓存中加载）</span></span><br><span class="line">location.reload(<span class="literal">true</span>); <span class="comment">//重新加载（从服务器重新加载）</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h4 id="3-3-7-Object类型"><a href="#3-3-7-Object类型" class="headerlink" title="3.3.7 Object类型"></a>3.3.7 <code>Object</code>类型</h4><p>ECMAScript 中的对象其实就是一组数据和功能的集合。 对象可以通过执行 new 操作符后跟要创建的对象类型的名称来创建。 而创建 Object 类型的实例并为其添加属性和（或）方法，就可以创建自定义对象：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
-<p>Object 的每个实例都具有下列属性和方法:</p>
+<h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><p>navigator的属性和方法：</p>
+<p><img src="/2019/10/21/JavaScript高级教程8/navigator对象.png" alt></p>
+<h4 id="检查插件"><a href="#检查插件" class="headerlink" title="检查插件"></a>检查插件</h4><p>检测浏览器中是否安装了特定的插件是一种最常见的检测例程。</p>
+<p>对于非 IE 浏览器，可以使用 plugins 数组来达到这个目的。该数组中的每一项都包含下列属性。</p>
 <ul>
-<li><code>constructor</code>：保存着用于创建当前对象的函数。对于前面的例子而言，构造函数（ constructor）就是 Object() </li>
-<li><code>hasOwnProperty(propertyName)</code>：用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在。其中，作为参数的属性名必须以字符串形式指定（例如： <code>o.hasOwnProperty(&quot;name&quot;)</code>） </li>
-<li><code>isPrototypeOf(object)</code>：用于检查传入的对象是否是传入对象的原型</li>
-<li><code>propertyIsEnumerable(propertyName)</code>：用于检查给定的属性是否能够使用 for-in 语句来枚举。与<code>hasOwnProperty()</code>方法一样，作为参数的属性名必须以字符串形式指定。 </li>
-<li><code>toLocaleString()</code>：返回对象的字符串表示，该字符串与执行环境的地区对应。 </li>
-<li><code>toString()</code>：返回对象的字符串表示。 </li>
-<li><code>valueOf()</code>：返回对象的字符串、数值或布尔值表示。通常与 <code>toString()</code>方法的返回值相同。 </li>
+<li><p>name：插件的名字。 </p>
+</li>
+<li><p>description：插件的描述。 </p>
+</li>
+<li><p>filename：插件的文件名。 </p>
+</li>
+<li><p>length：插件所处理的 MIME 类型数量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(navigator.plugins);</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/10/21/JavaScript高级教程8/plugin.png" alt></p>
+</li>
 </ul>
-<p>由于在 ECMAScript 中 <code>Object</code> 是所有对象的基础，因此所有对象都具有这些基本的属性和方法。 </p>
-<h3 id="3-4-操作符"><a href="#3-4-操作符" class="headerlink" title="3.4 操作符"></a>3.4 操作符</h3><h4 id="3-4-1-一元操作符"><a href="#3-4-1-一元操作符" class="headerlink" title="3.4.1 一元操作符"></a>3.4.1 一元操作符</h4><p>前置递增/减操作符（++a/–a）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</span><br><span class="line">++age;</span><br></pre></td></tr></table></figure>
-<p>相当于</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</span><br><span class="line">age = age + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<p>后置递增/减操作符（a++/a–）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</span><br><span class="line">age++;</span><br></pre></td></tr></table></figure>
-<p>把递增操作符放在变量后面并不会改变语句的结果 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> num3 = num1-- + num2; <span class="comment">// 等于 22</span></span><br><span class="line"><span class="keyword">var</span> num4 = num1 + num2; <span class="comment">// 等于 21</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-4-2-位操作符"><a href="#3-4-2-位操作符" class="headerlink" title="3.4.2 位操作符"></a>3.4.2 位操作符</h4><p><strong>按位非（ NOT）</strong> </p>
-<p>按位非操作符由一个波浪线（ ~）表示，执行按位非的结果就是返回数值的反码。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">25</span>; <span class="comment">// 二进制 00000000000000000000000000011001</span></span><br><span class="line"><span class="keyword">var</span> num2 = ~num1; <span class="comment">// 二进制 11111111111111111111111111100110</span></span><br><span class="line">alert(num2); <span class="comment">// -26</span></span><br></pre></td></tr></table></figure>
-<p><strong>按位与（ AND）</strong> </p>
-<p>按位与操作符由一个和号字符（ &amp;）表示，它有两个操作符数.</p>
-<p><strong>按位或（ OR）</strong> </p>
-<p>按位或操作符由一个竖线符号（ |）表示，同样也有两个操作数 .</p>
-<p><strong>按位异或（ XOR）</strong> </p>
-<p>按位异或操作符由一个插入符号（ ^）表示，也有两个操作数。 </p>
-<p>这个操作在两个数值对应位上只有一个 1 时才返回 1，如果对应的两位都是 1 或都是 0，则返回 0。 </p>
-<p><strong>左移</strong></p>
-<p>左移操作符由两个小于号（ &lt;&lt;）表示，这个操作符会将数值的所有位向左移动指定的位数。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">2</span>; <span class="comment">// 等于二进制的 10</span></span><br><span class="line"><span class="keyword">var</span> newValue = oldValue &lt;&lt; <span class="number">5</span>; <span class="comment">// 等于二进制的 1000000，十进制的 64</span></span><br></pre></td></tr></table></figure>
-<p><strong>有符号的右移</strong> </p>
-<p>有符号的右移操作符由两个大于号（ &gt;&gt;）表示，这个操作符会将数值向右移动，但保留符号位（即正负号标记）。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">64</span>; <span class="comment">// 等于二进制的 1000000</span></span><br><span class="line"><span class="keyword">var</span> newValue = oldValue &gt;&gt; <span class="number">5</span>; <span class="comment">// 等于二进制的 10 ，即十进制的 2</span></span><br></pre></td></tr></table></figure>
-<p><strong>无符号右移</strong> </p>
-<p>无符号右移操作符由 3 个大于号（ &gt;&gt;&gt;）表示，这个操作符会将数值的所有 32 位都向右移动。 对正数来说，无符号右移的结果与有符号右移相同。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">-64</span>; <span class="comment">// 等于二进制的 11111111111111111111111111000000</span></span><br><span class="line"><span class="keyword">var</span> newValue = oldValue &gt;&gt;&gt; <span class="number">5</span>; <span class="comment">// 等于十进制的 134217726</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-4-3-布尔操作符"><a href="#3-4-3-布尔操作符" class="headerlink" title="3.4.3 布尔操作符"></a>3.4.3 布尔操作符</h4><p>布尔操作符一共有 3 个：非（ NOT）、与（ AND）和或（ OR） ；</p>
-<p><strong>逻辑非</strong> </p>
-<p>逻辑非操作符由一个叹号(!)表示 ,逻辑非操作符遵循下列规则： </p>
-<ul>
-<li>如果操作数是一个对象，返回 false；</li>
-<li>如果操作数是一个空字符串，返回 true；</li>
-<li>如果操作数是一个非空字符串，返回 false；</li>
-<li>如果操作数是数值 0，返回 true；</li>
-<li>如果操作数是任意非 0 数值（包括 Infinity），返回 false；</li>
-<li>如果操作数是 null，返回 true；</li>
-<li>如果操作数是 <code>NaN</code>，返回 true；</li>
-<li>如果操作数是 undefined，返回 true。 </li>
-</ul>
-<p><strong>逻辑与</strong></p>
-<p>逻辑与操作符由两个和号（ &amp;&amp;）表示，有两个操作数 ,它遵循下列规则： </p>
-<ul>
-<li>如果第一个操作数是对象，则返回第二个操作数；</li>
-<li>如果第二个操作数是对象，则只有在第一个操作数的求值结果为 true 的情况下才会返回该<br>对象；</li>
-<li>如果两个操作数都是对象，则返回第二个操作数；</li>
-<li>如果有一个操作数是 null，则返回 null；</li>
-<li>如果有一个操作数是<code>NaN</code>，则返回 <code>NaN</code>；</li>
-<li>如果有一个操作数是 undefined，则返回 undefined。 </li>
-</ul>
-<p>逻辑或</p>
-<p>逻辑或操作符由两个竖线符号（ ||）表示，有两个操作数 ,它遵循下列规则：</p>
-<ul>
-<li>如果第一个操作数是对象，则返回第一个操作数；</li>
-<li>如果第一个操作数的求值结果为 false，则返回第二个操作数；</li>
-<li>如果两个操作数都是对象，则返回第一个操作数；</li>
-<li>如果两个操作数都是 null，则返回 null；</li>
-<li>如果两个操作数都是 <code>NaN</code>，则返回 <code>NaN</code>；</li>
-<li>如果两个操作数都是 undefined，则返回 undefined。 </li>
-</ul>
-<h3 id="3-5-语句"><a href="#3-5-语句" class="headerlink" title="3.5 语句"></a>3.5 语句</h3><h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a><code>if</code>语句</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">25</span>) &#123;</span><br><span class="line">   alert(<span class="string">"Greater than 25."</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">   alert(<span class="string">"Less than 0."</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">   alert(<span class="string">"Between 0 and 25, inclusive."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="do-while语句"><a href="#do-while语句" class="headerlink" title="do-while语句"></a><code>do-while</code>语句</h4><p><code>do-while</code> 语句是一种后测试循环语句，即只有在循环体中的代码执行之后，才会测试出口条件。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">   statement</span><br><span class="line">&#125; <span class="keyword">while</span> (expression);</span><br></pre></td></tr></table></figure>
-<h4 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a><code>while</code>语句</h4><p><code>while</code> 语句属于前测试循环语句， 也就是说， 在循环体内的代码被执行之前，就会对出口条件求值。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(expression) &#123;</span><br><span class="line">   statement</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a><code>for</code>语句</h4><p><code>for</code> 语句也是一种前测试循环语句，但它具有在执行循环之前初始化变量和定义循环后要执行的代码的能力。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (initialization; expression; post-loop-expression) &#123;</span><br><span class="line">    statement</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="for-in语句"><a href="#for-in语句" class="headerlink" title="for-in语句"></a><code>for-in</code>语句</h4><p><code>for-in</code>语句是一种精准的迭代语句，可以用来枚举对象的属性。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (property <span class="keyword">in</span> expression) statement</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> propName <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line"><span class="built_in">document</span>.write(propName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，我们使用<code>for-in</code> 循环来显示了 BOM 中 <code>window</code> 对象的所有属性。 </p>
-<h4 id="label语句"><a href="#label语句" class="headerlink" title="label语句"></a><code>label</code>语句</h4><p>使用 label 语句可以在代码中添加标签，以便将来使用。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">label: statement</span><br><span class="line"></span><br><span class="line">start: <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="break和continue语句"><a href="#break和continue语句" class="headerlink" title="break和continue语句"></a><code>break</code>和<code>continue</code>语句</h4><p><code>break</code> 语句会立即退出循环，强制继续执行循环后面的语句。而 <code>continue</code> 语句虽然也是立即退出循环，但退出循环后会从循环的顶部继续执行。 </p>
-<p><code>break</code>和 <code>continue</code> 语句都可以与 label 语句联合使用，从而返回代码中特定的位置。这种联合使用的情况多发生在循环嵌套的情况下，如下面的例子所示： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">outermost:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>) &#123;</span><br><span class="line">       <span class="keyword">break</span> outermost;</span><br><span class="line">    &#125;</span><br><span class="line">    num++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(num); <span class="comment">//55</span></span><br></pre></td></tr></table></figure>
-<p>在这个例子中， outermost 标签表示外部的 for 语句。如果每个循环正常执行 10 次，则 <code>num++</code>语句就会正常执行 100 次。换句话说，如果两个循环都自然结束， <code>num</code> 的值应该是 100。但内部循环中的 break 语句带了一个参数：要返回到的标签。添加这个标签的结果将导致 break 语句不仅会退出内部的 for 语句（即使用变量 j 的循环），而且也会退出外部的 for 语句（即使用变量 i 的循环）。 </p>
-<h4 id="with语句"><a href="#with语句" class="headerlink" title="with语句"></a><code>with</code>语句</h4><p><code>with</code> 语句的作用是将代码的作用域设置到一个特定的对象中。 with 语句的语法如下： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> (expression) statement;</span><br></pre></td></tr></table></figure>
-<p>定义 <code>with</code> 语句的目的主要是为了简化多次编写同一个对象的工作，如下面的例子所示： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> qs = location.search.substring(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> hostName = location.hostname;</span><br><span class="line"><span class="keyword">var</span> url = location.href;</span><br></pre></td></tr></table></figure>
-<p>上面几行代码都包含 <code>location</code> 对象。如果使用 <code>with</code> 语句，可以把上面的代码改写成如下所示： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span>(location)&#123;</span><br><span class="line">    <span class="keyword">var</span> qs = search.substring(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> hostName = hostname;</span><br><span class="line">    <span class="keyword">var</span> url = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a><code>switch</code>语句</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression) &#123;</span><br><span class="line">  <span class="keyword">case</span> value: statement</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> value: statement</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> value: statement</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> value: statement</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>: statement</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>ECMAScript 函数不能重载。 如果在 ECMAScript 中定义了两个名字相同的函数，则该名字只属于后定义的函数。 前者会被覆盖。</p>
+<p>检查非IE插件:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测插件（在 IE 中无效）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPlugin</span>(<span class="params">name</span>)</span>&#123; </span><br><span class="line">     name = name.toLowerCase(); </span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; navigator.plugins.length; i++)&#123; </span><br><span class="line">         <span class="keyword">if</span> (navigator. plugins [i].name.toLowerCase().indexOf(name) &gt; <span class="number">-1</span>)&#123; </span><br><span class="line">             <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">         &#125; </span><br><span class="line">     &#125; </span><br><span class="line">     <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//检测 Flash </span></span><br><span class="line">alert(hasPlugin(<span class="string">"Flash"</span>)); </span><br><span class="line"><span class="comment">//检测 QuickTime </span></span><br><span class="line">alert(hasPlugin(<span class="string">"QuickTime"</span>));</span><br></pre></td></tr></table></figure>
+<p>检查IE中的插件：</p>
+<p>检测 IE 中的插件比较麻烦，因为 IE 不支持 Netscape 式的插件。在 IE 中检测插件的唯一方式就是使用专有的 </p>
+<p><code>ActiveXObject</code> 类型，并尝试创建一个特定插件的实例。</p>
+<p>IE 是以 COM 对象的方式实现插件的，而 COM 对象使用唯一标识符来标识。因此，要想检查特定的插件，就</p>
+<p>必须知道其 COM 标识符。例如，Flash 的标识符是<code>ShockwaveFlash.ShockwaveFlash</code>。知道唯一标识符之</p>
+<p>后，就可以编写类似下面的函数来检测 IE 中是否安装相应插件了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测 IE 中的插件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasIEPlugin</span>(<span class="params">name</span>)</span>&#123; </span><br><span class="line">     <span class="keyword">try</span> &#123; </span><br><span class="line">         <span class="keyword">new</span> ActiveXObject(name); </span><br><span class="line">         <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">     &#125; <span class="keyword">catch</span> (ex)&#123; </span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">     &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//检测 Flash </span></span><br><span class="line">alert(hasIEPlugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>)); </span><br><span class="line"><span class="comment">//检测 QuickTime </span></span><br><span class="line">alert(hasIEPlugin(<span class="string">"QuickTime.QuickTime"</span>));</span><br></pre></td></tr></table></figure>
+<p>鉴于检测这两种插件的方法差别太大，因此典型的做法是针对每个插件分别创建检测函数，而不是使用前面</p>
+<p>介绍的通用检测方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测所有浏览器中的 Flash </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasFlash</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">     <span class="keyword">var</span> result = hasPlugin(<span class="string">"Flash"</span>); </span><br><span class="line">     <span class="keyword">if</span> (!result)&#123; </span><br><span class="line">         result = hasIEPlugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>); </span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> result; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h3><p><img src="/2019/10/21/JavaScript高级教程8/screen对象.png" alt></p>
+<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><p>history 对象保存着用户上网的历史记录，从窗口被打开的那一刻算起。因为 history 是 window对象的属</p>
+<p>性，因此每个浏览器窗口、每个标签页乃至每个框架，都有自己的 history 对象与特定的 window 对象关联。</p>
+<p>history 对象还有一个 length 属性，保存着历史记录的数量。这个数量包括所有历史记录，即所有向后和向前</p>
+<p>的记录。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//后退一页</span></span><br><span class="line">history.go(<span class="number">-1</span>); </span><br><span class="line"><span class="comment">//前进一页</span></span><br><span class="line">history.go(<span class="number">1</span>); </span><br><span class="line"><span class="comment">//前进两页</span></span><br><span class="line">history.go(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//跳转到最近的 wrox.com 页面</span></span><br><span class="line">history.go(<span class="string">"wrox.com"</span>); </span><br><span class="line"><span class="comment">//跳转到最近的 nczonline.net 页面</span></span><br><span class="line">history.go(<span class="string">"nczonline.net"</span>);</span><br><span class="line"><span class="comment">//后退一页</span></span><br><span class="line">history.back(); </span><br><span class="line"><span class="comment">//前进一页</span></span><br><span class="line">history.forward();</span><br><span class="line"><span class="keyword">if</span> (history.length == <span class="number">0</span>)&#123; </span><br><span class="line"> <span class="comment">//这应该是用户打开窗口后的第一个页面</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -513,7 +411,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/16/JavaScript高级教程3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/21/JavaScript高级教程8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -527,18 +425,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/22/ECMAScript6入门/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ECMAScript6入门
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/16/JavaScript高级教程2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JavaScript高级教程</div>
+    <a href="/2019/10/17/JavaScript高级教程7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript高级教程7</div>
       <i class="icon-circle-right"></i>
     </a>
   
