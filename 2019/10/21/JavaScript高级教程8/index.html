@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/navigator对象.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/plugin.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/21/JavaScript高级教程8/screen对象.png">
-<meta property="og:updated_time" content="2019-10-22T06:26:12.000Z">
+<meta property="og:updated_time" content="2019-10-22T06:29:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript高级教程8">
 <meta name="twitter:description" content="第八章  BOM window对象 location对象 navigator对象 screen对象 history对象">
@@ -201,59 +201,41 @@
 <li>history对象</li>
 </ul>
 <a id="more"></a>
-<h3 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h3><p>window 对象有双重角色，它既是通过 JavaScript 访问浏览器窗口的一个接口，又是 ECMAScript 规定的 </p>
-<p>Global 对象。</p>
-<p>定义全局变量与在 window 对象上直接定义属性的区别：全局变量不能通过 delete 操作符删除，而直接在 </p>
-<p>window 对象上的定义的属性可以。</p>
+<h3 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h3><p>window 对象有双重角色，它既是通过 JavaScript 访问浏览器窗口的一个接口，又是 ECMAScript 规定的Global 对象。</p>
+<p>定义全局变量与在 window 对象上直接定义属性的区别：全局变量不能通过 delete 操作符删除，而直接在window 对象上的定义的属性可以。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>; </span><br><span class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>; </span><br><span class="line"><span class="comment">//在 IE &lt; 9 时抛出错误，在其他所有浏览器中都返回 false </span></span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">window</span>.age; </span><br><span class="line"><span class="comment">//在 IE &lt; 9 时抛出错误，在其他所有浏览器中都返回 true </span></span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">window</span>.color; <span class="comment">//returns true </span></span><br><span class="line">alert(<span class="built_in">window</span>.age); <span class="comment">//29 </span></span><br><span class="line">alert(<span class="built_in">window</span>.color); <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
-<p><code>var</code> 语句添加的 window 属性有一个名为[[Configurable]]的特性，这个特性的值被设置为false，因此这样定</p>
-<p>义的属性不可以通过delete操作符删除.</p>
+<p><code>var</code> 语句添加的 window 属性有一个名为[[Configurable]]的特性，这个特性的值被设置为false，因此这样定义的属性不可以通过delete操作符删除.</p>
 <h4 id="间歇调用和超时调用"><a href="#间歇调用和超时调用" class="headerlink" title="间歇调用和超时调用"></a>间歇调用和超时调用</h4><p>超时调用是在指定的时间过后执行代码，间歇调用是每隔指定的时间就执行一次代码。</p>
-<p>超时调用需要使用 window 对象的 <code>setTimeout()</code>方法，它接受两个参数：要执行的代码和以毫秒 </p>
-<p>表示的时间（即在执行代码前需要等待多少毫秒）。</p>
+<p>超时调用需要使用 window 对象的 <code>setTimeout()</code>方法，它接受两个参数：要执行的代码和以毫秒表示的时间（即在执行代码前需要等待多少毫秒）。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"> alert(<span class="string">"Hello world!"</span>); </span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-<p>第二个参数是一个表示等待多长时间的毫秒数，但经过该时间后指定的代码不一定会执行。 JavaScript 是一</p>
-<p>个单线程序的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就 有一个 JavaScript 任</p>
-<p>务队列。这些任务会按照将它们添加到队列的顺序执行。<code>setTimeout()</code>的第二个 参数告诉 JavaScript 再过</p>
-<p>多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即 执行；如果队列不是空的，那</p>
-<p>么它就要等前面的代码执行完了以后再执行。 </p>
-<p>调用<code>setTimeout()</code>之后，该方法会返回一个数值 ID，表示超时调用。这个超时调用 ID 是计划执 行代码的唯</p>
-<p>一标识符，可以通过它来取消超时调用。要取消尚未执行的超时调用计划，可以调用 <code>clearTimeout()</code>方法</p>
-<p>并将相应的超时调用 ID 作为参数传递给它.</p>
+<p>第二个参数是一个表示等待多长时间的毫秒数，但经过该时间后指定的代码不一定会执行。 JavaScript 是一个单线程序的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就 有一个 JavaScript 任务队列。这些任务会按照将它们添加到队列的顺序执行。<code>setTimeout()</code>的第二个 参数告诉 JavaScript 再过多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即 执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。 调用<code>setTimeout()</code>之后，该方法会返回一个数值 ID，表示超时调用。这个超时调用 ID 是计划执 行代码的唯一标识符，可以通过它来取消超时调用。要取消尚未执行的超时调用计划，可以调用 <code>clearTimeout()</code>方法并将相应的超时调用 ID 作为参数传递给它.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置超时调用</span></span><br><span class="line"><span class="keyword">var</span> timeoutId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"> alert(<span class="string">"Hello world!"</span>); </span><br><span class="line">&#125;, <span class="number">1000</span>); </span><br><span class="line"><span class="comment">//注意：把它取消</span></span><br><span class="line">clearTimeout(timeoutId);</span><br></pre></td></tr></table></figure>
-<p>间歇调用与超时调用类似，只不过它会按照指定的时间间隔重复执行代码，直至间歇调用被取消或者页面被</p>
-<p>卸载。设置间歇调用的方法是 <code>setInterval()</code>.</p>
+<p>间歇调用与超时调用类似，只不过它会按照指定的时间间隔重复执行代码，直至间歇调用被取消或者页面被卸载。设置间歇调用的方法是 <code>setInterval()</code>.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//推荐的调用方式</span></span><br><span class="line">setInterval (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line"> alert(<span class="string">"Hello world!"</span>); </span><br><span class="line">&#125;, <span class="number">10000</span>);</span><br></pre></td></tr></table></figure>
-<p>调用<code>setInterval()</code>方法同样也会返回一个间歇调用 ID，该 ID 可用于在将来某个时刻取消间歇调用。要</p>
-<p>取消尚未执行的间歇调用，可以使用<code>clearInterval()</code>方法并传入相应的间歇调用 ID。取消间歇调用的</p>
-<p>重要性要远远高于取消超时调用.</p>
+<p>调用<code>setInterval()</code>方法同样也会返回一个间歇调用 ID，该 ID 可用于在将来某个时刻取消间歇调用。要取消尚未执行的间歇调用，可以使用<code>clearInterval()</code>方法并传入相应的间歇调用 ID。取消间歇调用的重要性要远远高于取消超时调用.</p>
 <h4 id="系统对话框"><a href="#系统对话框" class="headerlink" title="系统对话框"></a>系统对话框</h4><ul>
 <li><p><code>alert()</code>方法</p>
 <p><img src="/2019/10/21/JavaScript高级教程8/alert.png" alt></p>
 </li>
 <li><p><code>confirm()</code>方法</p>
 <p><img src="/2019/10/21/JavaScript高级教程8/confirm.png" alt></p>
-<p>为了确定用户是单击了 OK 还是 Cancel，可以检查 confirm()方法返回的布尔值：true 表示单击 了 OK，</p>
-<p>false 表示单击了 Cancel 或单击了右上角的 X 按钮。确认对话框的典型用法如下:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(confirm(<span class="string">"Are you sure?"</span>))&#123;</span><br><span class="line">    alert(<span class="string">"sure"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"not sure"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了确定用户是单击了 OK 还是 Cancel，可以检查 confirm()方法返回的布尔值：true 表示单击 了 OK，false 表示单击了 Cancel 或单击了右上角的 X 按钮。确认对话框的典型用法如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(confirm(<span class="string">"Are you sure?"</span>))&#123;</span><br><span class="line">      alert(<span class="string">"sure"</span>);</span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      alert(<span class="string">"not sure"</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<ul>
 <li><p><code>prompt()</code>方法</p>
 <p><img src="/2019/10/21/JavaScript高级教程8/prompt.png" alt></p>
 </li>
 </ul>
 <p>prompt()方法接受两个参数：要显示给用户的文本提示和文本输入域的默认值（可以是一个空字符串）。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prompt(<span class="string">"What's you name"</span>,<span class="string">"jackson"</span>);</span><br></pre></td></tr></table></figure>
-<p>如果用户单击了 OK 按钮，则 prompt()返回文本输入域的值；如果用户单击了 Cancel 或没有单击OK 而是通</p>
-<p>过其他方式关闭了对话框，则该方法返回 null。下面是一个例子。</p>
+<p>如果用户单击了 OK 按钮，则 prompt()返回文本输入域的值；如果用户单击了 Cancel 或没有单击OK 而是通过其他方式关闭了对话框，则该方法返回 null。下面是一个例子。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = prompt(<span class="string">"What's you name"</span>,<span class="string">"jackson"</span>);</span><br><span class="line"><span class="keyword">if</span>(result !== <span class="literal">null</span>)&#123;</span><br><span class="line">    alert(result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过这几个方法打开的对话框都是同步和模态的。也就是说，显示这些对话框的时候代码会停止执行，而关</p>
-<p>掉这些对话框后代码又会恢复执行。 </p>
-<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p>location 对象是很特别的一个对象，因为它既是 window 对象的属性，也是document 对象的属性；换句话</p>
-<p>说，<code>window.location</code> 和 <code>document.location</code> 引用的是同一个对象。</p>
-<p>下表列出了 location 对象的所有属性:</p>
+<p>通过这几个方法打开的对话框都是同步和模态的。也就是说，显示这些对话框的时候代码会停止执行，而关掉这些对话框后代码又会恢复执行。 </p>
+<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p>location 对象是很特别的一个对象，因为它既是 window 对象的属性，也是document 对象的属性；换句话说，<code>window.location</code> 和 <code>document.location</code> 引用的是同一个对象。下表列出了 location 对象的所有属性:</p>
 <p><img src="/2019/10/21/JavaScript高级教程8/location对象.png" alt></p>
-<h4 id="获取URL字符串参数"><a href="#获取URL字符串参数" class="headerlink" title="获取URL字符串参数"></a>获取URL字符串参数</h4><p><code>location.search</code>返回从问号到 URL 末尾的所有内容，但却没有办法逐个 访问其中的每个查询字符串参</p>
-<p>数。为此，可以像下面这样创建一个函数，用以解析查询字符串，然后返回包含所有参数的一个对象：</p>
+<h4 id="获取URL字符串参数"><a href="#获取URL字符串参数" class="headerlink" title="获取URL字符串参数"></a>获取URL字符串参数</h4><p><code>location.search</code>返回从问号到 URL 末尾的所有内容，但却没有办法逐个 访问其中的每个查询字符串参数。为此，可以像下面这样创建一个函数，用以解析查询字符串，然后返回包含所有参数的一个对象：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getQueryStringArgs</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">     <span class="comment">//取得查询字符串并去掉开头的问号</span></span><br><span class="line">     <span class="keyword">var</span> qs = (location.search.length &gt; <span class="number">0</span> ? location.search.substring(<span class="number">1</span>) : <span class="string">""</span>), </span><br><span class="line">     <span class="comment">//保存数据的对象</span></span><br><span class="line">     args = &#123;&#125;, </span><br><span class="line">     <span class="comment">//取得每一项</span></span><br><span class="line">     items = qs.length ? qs.split(<span class="string">"&amp;"</span>) : [], </span><br><span class="line">     item = <span class="literal">null</span>, </span><br><span class="line">     name = <span class="literal">null</span>,</span><br><span class="line">     value = <span class="literal">null</span>, </span><br><span class="line">     <span class="comment">//在 for 循环中使用</span></span><br><span class="line">     i = <span class="number">0</span>, </span><br><span class="line">     len = items.length; </span><br><span class="line">     <span class="comment">//逐个将每一项添加到 args 对象中</span></span><br><span class="line">     <span class="keyword">for</span> (i=<span class="number">0</span>; i &lt; len; i++)&#123; </span><br><span class="line">         item = items[i].split(<span class="string">"="</span>); </span><br><span class="line">         name = <span class="built_in">decodeURIComponent</span>(item[<span class="number">0</span>]); </span><br><span class="line">         value = <span class="built_in">decodeURIComponent</span>(item[<span class="number">1</span>]); </span><br><span class="line">         <span class="keyword">if</span> (name.length) &#123; </span><br><span class="line">             args[name] = value; </span><br><span class="line">         &#125; </span><br><span class="line">     &#125; </span><br><span class="line">     <span class="keyword">return</span> args; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假设查询字符串是?q=javascript&amp;num=10 </span></span><br><span class="line"><span class="keyword">var</span> args = getQueryStringArgs(); </span><br><span class="line">alert(args[<span class="string">"q"</span>]); <span class="comment">//"javascript" </span></span><br><span class="line">alert(args[<span class="string">"num"</span>]); <span class="comment">//"10"</span></span><br></pre></td></tr></table></figure>
 <h4 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h4><p>改变浏览器的位置：</p>
@@ -267,30 +249,23 @@
 <li><p>修改<code>location</code>属性</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.location = <span class="string">"http://www.wrox.com"</span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>修改location对象的其他属性也可以改变当前加载的页面。下面的例子展示了通过将hash、search、</p>
-<p>hostname、pathname 和 port 属性设置为新值来改变 URL。</p>
+<li><p>修改location对象的其他属性也可以改变当前加载的页面。下面的例子展示了通过将hash、search、hostname、pathname 和 port 属性设置为新值来改变 URL。</p>
 <p>假设初始 URL 为<code>http://www.wrox.com/WileyCDA/</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将 URL 修改为"http://www.wrox.com/WileyCDA/#section1" </span></span><br><span class="line">location.hash = <span class="string">"#section1"</span>; </span><br><span class="line"><span class="comment">//将 URL 修改为"http://www.wrox.com/WileyCDA/?q=javascript" </span></span><br><span class="line">location.search = <span class="string">"?q=javascript"</span>; </span><br><span class="line"><span class="comment">//将 URL 修改为"http://www.yahoo.com/WileyCDA/" </span></span><br><span class="line">location.hostname = <span class="string">"www.yahoo.com"</span>; </span><br><span class="line"><span class="comment">//将 URL 修改为"http://www.yahoo.com/mydir/" </span></span><br><span class="line">location.pathname = <span class="string">"mydir"</span>; </span><br><span class="line"><span class="comment">//将 URL 修改为"http://www.yahoo.com:8080/WileyCDA/" </span></span><br><span class="line">location.port = <span class="number">8080</span>;</span><br></pre></td></tr></table></figure>
-<p>每次修改 location 的属性（hash 除外），页面都会以新 URL 重新加载。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将 URL 修改为"http://www.wrox.com/WileyCDA/#section1" </span></span><br><span class="line">  location.hash = <span class="string">"#section1"</span>; </span><br><span class="line">  <span class="comment">//将 URL 修改为"http://www.wrox.com/WileyCDA/?q=javascript" </span></span><br><span class="line">  location.search = <span class="string">"?q=javascript"</span>; </span><br><span class="line">  <span class="comment">//将 URL 修改为"http://www.yahoo.com/WileyCDA/" </span></span><br><span class="line">  location.hostname = <span class="string">"www.yahoo.com"</span>; </span><br><span class="line">  <span class="comment">//将 URL 修改为"http://www.yahoo.com/mydir/" </span></span><br><span class="line">  location.pathname = <span class="string">"mydir"</span>; </span><br><span class="line">  <span class="comment">//将 URL 修改为"http://www.yahoo.com:8080/WileyCDA/" </span></span><br><span class="line">  location.port = <span class="number">8080</span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li></li>
 </ul>
-<p>当通过上述任何一种方式修改 URL 之后，浏览器的历史记录中就会生成一条新记录，因此用户通过单击“后</p>
-<p>退”按钮都会导航到前一个页面。要禁用这种行为，可以使用 replace()方法。这个方法只接受一个参数，即要</p>
-<p>导航到的 URL；结果虽然会导致浏览器位置改变，但不会在历史记录中生成新记录。在调用<code>replace()</code>方法</p>
-<p>之后，用户不能回到前一个页面，</p>
+<p>  每次修改 location 的属性（hash 除外），页面都会以新 URL 重新加载。</p>
 <ul>
+<li><p>当通过上述任何一种方式修改 URL 之后，浏览器的历史记录中就会生成一条新记录，因此用户通过单击“后退”按钮都会导航到前一个页面。要禁用这种行为，可以使用 replace()方法。这个方法只接受一个参数，即要导航到的 URL；结果虽然会导致浏览器位置改变，但不会在历史记录中生成新记录。在调用<code>replace()</code>方法之后，用户不能回到前一个页面，</p>
+</li>
 <li><p><code>reload()</code>方法</p>
-<p>作用是重新加载当前显示的页面。如果调用 reload() 时不传递任何参数，页面就会以最有效的方式重新</p>
-<p>加载。也就是说，如果页面自上次请求以来并没有改变过，页面就会从浏览器缓存中重新加载。如果要强</p>
-<p>制从服务器重新加载，则需要像下面这样为该方法传递参数 true。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">location.reload(); <span class="comment">//重新加载（有可能从缓存中加载）</span></span><br><span class="line">location.reload(<span class="literal">true</span>); <span class="comment">//重新加载（从服务器重新加载）</span></span><br></pre></td></tr></table></figure>
+<p>作用是重新加载当前显示的页面。如果调用 reload() 时不传递任何参数，页面就会以最有效的方式重新加载。也就是说，如果页面自上次请求以来并没有改变过，页面就会从浏览器缓存中重新加载。如果要强制从服务器重新加载，则需要像下面这样为该方法传递参数 true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">location.reload(); <span class="comment">//重新加载（有可能从缓存中加载）</span></span><br><span class="line">  location.reload(<span class="literal">true</span>); <span class="comment">//重新加载（从服务器重新加载）</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><p>navigator的属性和方法：</p>
 <p><img src="/2019/10/21/JavaScript高级教程8/navigator对象.png" alt></p>
-<h4 id="检查插件"><a href="#检查插件" class="headerlink" title="检查插件"></a>检查插件</h4><p>检测浏览器中是否安装了特定的插件是一种最常见的检测例程。</p>
-<p>对于非 IE 浏览器，可以使用 plugins 数组来达到这个目的。该数组中的每一项都包含下列属性。</p>
+<h4 id="检查插件"><a href="#检查插件" class="headerlink" title="检查插件"></a>检查插件</h4><p>检测浏览器中是否安装了特定的插件是一种最常见的检测例程。对于非 IE 浏览器，可以使用 plugins 数组来达到这个目的。该数组中的每一项都包含下列属性。</p>
 <ul>
 <li><p>name：插件的名字。 </p>
 </li>
@@ -306,20 +281,12 @@
 <p>检查非IE插件:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测插件（在 IE 中无效）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPlugin</span>(<span class="params">name</span>)</span>&#123; </span><br><span class="line">     name = name.toLowerCase(); </span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; navigator.plugins.length; i++)&#123; </span><br><span class="line">         <span class="keyword">if</span> (navigator. plugins [i].name.toLowerCase().indexOf(name) &gt; <span class="number">-1</span>)&#123; </span><br><span class="line">             <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">         &#125; </span><br><span class="line">     &#125; </span><br><span class="line">     <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//检测 Flash </span></span><br><span class="line">alert(hasPlugin(<span class="string">"Flash"</span>)); </span><br><span class="line"><span class="comment">//检测 QuickTime </span></span><br><span class="line">alert(hasPlugin(<span class="string">"QuickTime"</span>));</span><br></pre></td></tr></table></figure>
 <p>检查IE中的插件：</p>
-<p>检测 IE 中的插件比较麻烦，因为 IE 不支持 Netscape 式的插件。在 IE 中检测插件的唯一方式就是使用专有的 </p>
-<p><code>ActiveXObject</code> 类型，并尝试创建一个特定插件的实例。</p>
-<p>IE 是以 COM 对象的方式实现插件的，而 COM 对象使用唯一标识符来标识。因此，要想检查特定的插件，就</p>
-<p>必须知道其 COM 标识符。例如，Flash 的标识符是<code>ShockwaveFlash.ShockwaveFlash</code>。知道唯一标识符之</p>
-<p>后，就可以编写类似下面的函数来检测 IE 中是否安装相应插件了。</p>
+<p>检测 IE 中的插件比较麻烦，因为 IE 不支持 Netscape 式的插件。在 IE 中检测插件的唯一方式就是使用专有的 <code>ActiveXObject</code> 类型，并尝试创建一个特定插件的实例。IE 是以 COM 对象的方式实现插件的，而 COM 对象使用唯一标识符来标识。因此，要想检查特定的插件，就必须知道其 COM 标识符。例如，Flash 的标识符是<code>ShockwaveFlash.ShockwaveFlash</code>。知道唯一标识符之后，就可以编写类似下面的函数来检测 IE 中是否安装相应插件了。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测 IE 中的插件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasIEPlugin</span>(<span class="params">name</span>)</span>&#123; </span><br><span class="line">     <span class="keyword">try</span> &#123; </span><br><span class="line">         <span class="keyword">new</span> ActiveXObject(name); </span><br><span class="line">         <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">     &#125; <span class="keyword">catch</span> (ex)&#123; </span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">     &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//检测 Flash </span></span><br><span class="line">alert(hasIEPlugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>)); </span><br><span class="line"><span class="comment">//检测 QuickTime </span></span><br><span class="line">alert(hasIEPlugin(<span class="string">"QuickTime.QuickTime"</span>));</span><br></pre></td></tr></table></figure>
-<p>鉴于检测这两种插件的方法差别太大，因此典型的做法是针对每个插件分别创建检测函数，而不是使用前面</p>
-<p>介绍的通用检测方法。</p>
+<p>鉴于检测这两种插件的方法差别太大，因此典型的做法是针对每个插件分别创建检测函数，而不是使用前面介绍的通用检测方法。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测所有浏览器中的 Flash </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasFlash</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">     <span class="keyword">var</span> result = hasPlugin(<span class="string">"Flash"</span>); </span><br><span class="line">     <span class="keyword">if</span> (!result)&#123; </span><br><span class="line">         result = hasIEPlugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>); </span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> result; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h3><p><img src="/2019/10/21/JavaScript高级教程8/screen对象.png" alt></p>
-<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><p>history 对象保存着用户上网的历史记录，从窗口被打开的那一刻算起。因为 history 是 window对象的属</p>
-<p>性，因此每个浏览器窗口、每个标签页乃至每个框架，都有自己的 history 对象与特定的 window 对象关联。</p>
-<p>history 对象还有一个 length 属性，保存着历史记录的数量。这个数量包括所有历史记录，即所有向后和向前</p>
-<p>的记录。</p>
+<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><p>history 对象保存着用户上网的历史记录，从窗口被打开的那一刻算起。因为 history 是 window对象的属性，因此每个浏览器窗口、每个标签页乃至每个框架，都有自己的 history 对象与特定的 window 对象关联。history 对象还有一个 length 属性，保存着历史记录的数量。这个数量包括所有历史记录，即所有向后和向前的记录。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//后退一页</span></span><br><span class="line">history.go(<span class="number">-1</span>); </span><br><span class="line"><span class="comment">//前进一页</span></span><br><span class="line">history.go(<span class="number">1</span>); </span><br><span class="line"><span class="comment">//前进两页</span></span><br><span class="line">history.go(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//跳转到最近的 wrox.com 页面</span></span><br><span class="line">history.go(<span class="string">"wrox.com"</span>); </span><br><span class="line"><span class="comment">//跳转到最近的 nczonline.net 页面</span></span><br><span class="line">history.go(<span class="string">"nczonline.net"</span>);</span><br><span class="line"><span class="comment">//后退一页</span></span><br><span class="line">history.back(); </span><br><span class="line"><span class="comment">//前进一页</span></span><br><span class="line">history.forward();</span><br><span class="line"><span class="keyword">if</span> (history.length == <span class="number">0</span>)&#123; </span><br><span class="line"> <span class="comment">//这应该是用户打开窗口后的第一个页面</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -553,11 +520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
