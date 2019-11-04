@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JavaScript高级教程5 | Joe2的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第五章 引用类型引用类型的值（对象）是引用类型的一个实例： 1234var person = &amp;#123;   name : &quot;Nick&quot;,   age : 18&amp;#125;">
+  <meta name="description" content="第五章 引用类型引用类型引用类型的值（对象）是引用类型的一个实例： 1234var person = &amp;#123;   name : &quot;Nick&quot;,   age : 18&amp;#125;">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript高级教程5">
 <meta property="og:url" content="http://yoursite.com/2019/10/09/JavaScript高级教程5/index.html">
 <meta property="og:site_name" content="Joe2的博客">
-<meta property="og:description" content="第五章 引用类型引用类型的值（对象）是引用类型的一个实例： 1234var person = &amp;#123;   name : &quot;Nick&quot;,   age : 18&amp;#125;">
+<meta property="og:description" content="第五章 引用类型引用类型引用类型的值（对象）是引用类型的一个实例： 1234var person = &amp;#123;   name : &quot;Nick&quot;,   age : 18&amp;#125;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/10/09/JavaScript高级教程5/personDemo.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/09/JavaScript高级教程5/personFunctionDemo.png">
@@ -27,10 +27,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/10/09/JavaScript高级教程5/借用构造函数demo2.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/09/JavaScript高级教程5/借用构造函数demo3.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/09/JavaScript高级教程5/逆推继承.png">
-<meta property="og:updated_time" content="2019-10-30T08:36:48.000Z">
+<meta property="og:updated_time" content="2019-10-31T13:19:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript高级教程5">
-<meta name="twitter:description" content="第五章 引用类型引用类型的值（对象）是引用类型的一个实例： 1234var person = &amp;#123;   name : &quot;Nick&quot;,   age : 18&amp;#125;">
+<meta name="twitter:description" content="第五章 引用类型引用类型引用类型的值（对象）是引用类型的一个实例： 1234var person = &amp;#123;   name : &quot;Nick&quot;,   age : 18&amp;#125;">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/09/JavaScript高级教程5/personDemo.png">
   
   
@@ -197,7 +197,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第五章-引用类型"><a href="#第五章-引用类型" class="headerlink" title="第五章 引用类型"></a>第五章 引用类型</h2><p>引用类型的值（对象）是引用类型的一个实例：</p>
+        <h2 id="第五章-引用类型"><a href="#第五章-引用类型" class="headerlink" title="第五章 引用类型"></a>第五章 引用类型</h2><h5 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h5><p>引用类型的值（对象）是引用类型的一个实例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">   name : <span class="string">"Nick"</span>,</span><br><span class="line">   age : <span class="number">18</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>访问对象的属性的方法</p>
@@ -216,13 +216,25 @@
 <p><strong>除非必须使用变量来访问属性，否则我们建议使用点表示法。</strong></p>
 </li>
 </ul>
+<h4 id="RegExp类型"><a href="#RegExp类型" class="headerlink" title="RegExp类型"></a><code>RegExp</code>类型</h4></li>
+</ul>
+<p><code>ESCAScript</code>通过<code>RegExp</code>类型来支持正则表达式</p>
+<p>正则表达式：也叫规则表达式，按照一定的规则组成的一个表达式，这个表达式的<strong>作用主要是匹配字符串的</strong></p>
+<p>正则表达式的组成：是由元字符或者是限定符组成的一个式子</p>
+<p><strong>元字符：</strong></p>
+<h4 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h4><ul>
+<li><p>浅拷贝：相当于把一个对象中所有的内容，复制一份给另一个对象或者把一个对象的地址给了另一个对象，指向相同，两个对象之间有共同的方法和方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1=&#123;</span><br><span class="line">    age:<span class="number">20</span>,</span><br><span class="line">    sex:<span class="string">"男"</span>,</span><br><span class="line">    car:[<span class="string">"奔驰"</span>,<span class="string">"五菱宏光"</span>,<span class="string">"特斯拉"</span>,<span class="string">"奥拓"</span>]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2=&#123;&#125;;</span><br><span class="line"><span class="comment">//写一个函数实现浅拷贝,把a对象中所有的属性复制到对象b中</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> a)&#123;</span><br><span class="line">        b[key]=a[key];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">extend(obj1,obj2);</span><br><span class="line"><span class="built_in">console</span>.dir(obj2);</span><br><span class="line"><span class="built_in">console</span>.dir(obj1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>深拷贝：把一个对象中所有的属性和方法，一个一个找到，并且在另一个对象中开辟相应的空间，一个一个存储</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj3=&#123;</span><br><span class="line">    age:<span class="number">20</span>,</span><br><span class="line">    sex:<span class="string">"男"</span>,</span><br><span class="line">    car:[<span class="string">"奔驰"</span>,<span class="string">"五菱宏光"</span>,<span class="string">"特斯拉"</span>,<span class="string">"奥拓"</span>],</span><br><span class="line">    dog:&#123;</span><br><span class="line">        name:<span class="string">"大黄"</span>,</span><br><span class="line">        age:<span class="number">5</span>,</span><br><span class="line">        color:<span class="string">"黑色"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj4=&#123;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extendd</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> a)&#123;</span><br><span class="line">        <span class="comment">//先获取a对象中每个属性的值</span></span><br><span class="line">        <span class="keyword">var</span> item=a[key];</span><br><span class="line">        <span class="comment">//判断这个属性是不是数组</span></span><br><span class="line">        <span class="keyword">if</span>(item <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</span><br><span class="line">            b[key]=&#123;&#125;;</span><br><span class="line">            extendd(item,b[key]);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(item <span class="keyword">instanceof</span> <span class="built_in">Object</span>)&#123;<span class="comment">//判断这个属性是不是对象</span></span><br><span class="line">            b[key]=&#123;&#125;;</span><br><span class="line">            extendd(item,b[key]);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//如果对象a中属性为普通属性，直接复制</span></span><br><span class="line">            b[key]=a[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="第六章-对象"><a href="#第六章-对象" class="headerlink" title="第六章 对象"></a>第六章 对象</h2><ul>
 <li><hr>
-<p><strong>isPrototypeOf()`方法来确定对象之间是否存在指向关系。如果[[Prototype]]指向调用 isPrototypeOf()方法的对象（Person.prototype），那么这个方法就返回 true，</strong></p>
+<p><strong><code>isPrototypeOf()</code>方法来确定对象之间是否存在指向关系。如果[[Prototype]]指向调用 <code>isPrototypeOf()</code>方法的对象（<code>Person.prototype</code>），那么这个方法就返回 true，</strong></p>
 </li>
-<li><p><strong><code>Object.getPrototypeOf()</code>方法返回[[Prototype]]的值，Object.getPrototypeOf()返回的对象实际就是这个对象的原型</strong></p>
+<li><p><strong><code>Object.getPrototypeOf()</code>方法返回[[Prototype]]的值，<code>Object.getPrototypeOf()</code>返回的对象实际就是这个对象的原型</strong></p>
 </li>
 <li><p><strong><code>hasOwnProperty()</code>方法，判断什么时候访问的是实例属性，什么时候访问的是原型属性</strong></p>
 </li>
@@ -619,15 +631,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">文艺</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
             <div class="clearfix"></div>
