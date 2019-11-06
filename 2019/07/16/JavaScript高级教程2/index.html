@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		
-		<div style="position:absolute; bottom:120px left:auto; width:85%">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="200" height="80" src="//music.163.com/outchain/player?type=2&id=31168464&auto=1&height=66"></iframe>
+		<div  style="position:absolute; bottom:120px left:auto; width:85%">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=80 src="//music.163.com/outchain/player?type=2&id=31168464&auto=1&height=66"></iframe>
 		</div>
 	</header>		
 </div>
@@ -220,7 +220,7 @@
 <h4 id="2-1-1-标签的位置"><a href="#2-1-1-标签的位置" class="headerlink" title="2.1.1 标签的位置"></a>2.1.1 标签的位置</h4><ul>
 <li><p>传统做法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;Example HTML Page&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script type="text/</span>javascript<span class="string">" src="</span>example1.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">    &lt;script type="</span>text/javascript<span class="string">" src="</span>example2.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">  &lt;/head&gt;</span></span><br><span class="line"><span class="string">  &lt;body&gt;</span></span><br><span class="line"><span class="string">     &lt;!-- 这里放内容 --&gt;</span></span><br><span class="line"><span class="string">  &lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
-<p>可是，在文档的<head><meta name="generator" content="Hexo 3.8.0">元素中包含所有 JavaScript 文件，意味着必须等到全部 JavaScript 代码都被下载、解析和执行完成以后，才能开始呈现页面的内容（浏览器在遇到&lt;body&gt;标签时才开始呈现内容）。 导致浏览器在呈现页面时出现明显的延迟，而延迟期间的浏览器窗口中将是一片空白。 </head></p>
+<p>可是，在文档的<head><meta name="generator" content="Hexo 3.9.0">元素中包含所有 JavaScript 文件，意味着必须等到全部 JavaScript 代码都被下载、解析和执行完成以后，才能开始呈现页面的内容（浏览器在遇到&lt;body&gt;标签时才开始呈现内容）。 导致浏览器在呈现页面时出现明显的延迟，而延迟期间的浏览器窗口中将是一片空白。 </head></p>
 </li>
 <li><p>为避免这个问题：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">   &lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">     &lt;title&gt;Example HTML Page&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">   &lt;/</span>head&gt;</span><br><span class="line">   &lt;body&gt;</span><br><span class="line">     &lt;!-- 这里放内容 --&gt;</span><br><span class="line">     &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"example1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">     &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"example2.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">   &lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
@@ -498,15 +498,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">文艺</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
             <div class="clearfix"></div>
@@ -514,7 +514,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
